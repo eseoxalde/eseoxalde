@@ -6,7 +6,6 @@ header {
     background-color: rgb(216, 210, 210);
 }
 
-
 main {
     max-width: 1024px;
     margin: 20px auto;
@@ -14,14 +13,42 @@ main {
     background-color: rgb(216, 210, 210);
 }
 
-
-.titulos {
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 20px;
+.una-exp {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  
 }
-.titulo{
-    
+.una-expQA{
+  background-color: white;
+  padding: 10px 10px;
+  border-radius: 5px;
+  width: 80%;
+  margin: 0 auto;
+}
+.titulo-job{
+  font-weight: bold;
+}
+.fecha{
+  font-style: italic;
+}
+.donde{
+  font-weight: bold;
+}
+.tecnologias{
+  font-weight: normal;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+}
+.tecnologias li{
+  display: inline-block;
+  padding: 10px 10px;
+  border: 1px solid #ccc;
+  margin-right: 10px; 
+  margin-top:5px;
+  border-radius: 5px; 
 }
 
 #proyectos, #proyectosQA, #experienciaDev, #proyectosDev, #proyectosDoc{
