@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es/">
+
 <head>
     <meta charset="utf-8">
     <meta name="description" content="Sitio personal de Ese Kai Oxalde" />
@@ -8,1032 +9,904 @@
     <link rel="shortcut icon" href="img/icons8-trabajando-con-una-macbook-64.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
     <link href="font-awesome/css/fontawesome.css" rel="stylesheet">
     <link href="font-awesome/css/brands.css" rel="stylesheet">
     <link href="font-awesome/css/solid.css" rel="stylesheet">
 
 </head>
+
 <body>
-    <header>
+    <header role="header">
         <section class="container-fluid">
             <div class="row justify-content-center text-center">
                 <div class="col-md-6">
-                    <h1 class="nombre"><a href="index.html">Ese Kai Oxalde</a></h1>
-                    <img src="img/icons8-trabajando-con-una-macbook-64.png" class="img-fluid">
+                    <h1 class="nombre"><a href="index.html" aria-current="page"></a>Ese Kai Oxalde</a></h1>
+                    <img src="img/icons8-trabajando-con-una-macbook-64.png" class="img-fluid" alt="">
                 </div>
-                <div class="col-md-6 text-left">
-                    <ul class="list-unstyled">
-                        <li><a href="mailto:ese.oxalde@gmail.com" title="mail de contacto">
-                            <i class="fa-solid fa-envelope"></i> ese.oxalde@gmail.com
-                            </a>
-                        </li>
-                        <li><a href="https://www.linkedin.com/in/eseoxalde/" title="mi Linkedln">
-                            <i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                        </li>
-                        <li><a href="https://github.com/eseoxalde" title="mi Github">
-                            <i class="fa-brands fa-square-github"></i> Github</a>
-                        </li>
-                        <li><a href="descargas/oxalde.pdf" title="Descargar cv en pdf">
-                            <i class="fa-solid fa-file-pdf"></i>Descarga CV en pdf</a>
-                        </li>
-                    </ul>
+                <div class="col-md-6 text-start">
+                    <nav role="navigation" aria-label="Enlaces de contacto">
+                        <ul class="list-unstyled">
+                            <li><a href="mailto:ese.oxalde@gmail.com" title="mail de contacto">
+                                    <i class="fa-solid fa-envelope"></i> <span class="sr-only">Correo electrónico:
+                                    </span>ese.oxalde@gmail.com
+                                </a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/eseoxalde/" title="mi Linkedln">
+                                    <i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                            </li>
+                            <li><a href="https://github.com/eseoxalde" title="mi Github">
+                                    <i class="fa-brands fa-square-github"></i> Github</a>
+                            </li>
+                            <li><a href="descargas/oxalde.pdf" title="Descargar cv en pdf">
+                                    <i class="fa-solid fa-file-pdf"></i>Descarga CV en pdf</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </section>
     </header>
-    <main class=" container-fluid">
-        <div class="tab">
-            <button class="tablinks" onclick="openTab(event, 'sobremi')" id="defaultOpen"><i class="fa-solid fa-user-astronaut"> </i> Sobre Mi </button>
-            <button class="tablinks" onclick="openTab(event, 'QA')"><i class="fa-solid fa-bug"> </i> QA</button>
-            <button class="tablinks" onclick="openTab(event, 'Developer')"><i class="fa-solid fa-code"> </i> Develpoer</button>
-            <button class="tablinks" onclick="openTab(event, 'Docente')"><i class="fa-solid fa-chalkboard-user"> </i> Docente</button>
-          </div>
-          
-          <!-- Tab content -->
-          <div id="sobremi" class="tabcontent">
+    <main class="container-fluid" role="main">
+        <div class="tab" role="tablist" aria-label="Navegación por secciones del perfil">
+            <button class="tablinks" onclick="openTab(event, 'sobremi')" id="defaultOpen" role="tab"
+                aria-selected="true" aria-controls="sobremi">
+                <i class="fa-solid fa-user-astronaut"></i> Sobre Mi
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'QA')" role="tab" aria-selected="false" aria-controls="QA">
+                <i class="fa-solid fa-bug"></i> QA
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'Developer')" role="tab" aria-selected="false"
+                aria-controls="Developer">
+                <i class="fa-solid fa-code"></i> Developer
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'Docente')" role="tab" aria-selected="false"
+                aria-controls="Docente">
+                <i class="fa-solid fa-chalkboard-user"></i> Docente
+            </button>
+        </div>
+        <!-- Tab content -->
+        <!-- RESUMEN  -->
+        <section id="sobremi" class="tabcontent" role="tabpanel" aria-labelledby="defaultOpen">
             <div class="container">
                 <section class="container" id="experiencia">
-                    <header class="h-seccion"><h2 class="fs-3 text-center">Experiencia profesional</h2></header>
+                    <header class="h-seccion">
+                        <h2 class="fs-3 fw-bold text-center">Experiencia profesional</h2>
+                    </header>
                     <section class="row">
-                            <article class="col-md-4">
-                                <div class="una-exp">
-                                    <div class="imagen text-center">
-                                        <i class="fa-solid fa-bug"></i>
+                        <article class="col-md-4 mb-1" role="region" aria-labelledby="job1">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <h3 class="fs-5 fw-bold text-center" id="job1">Ayudante de práctica</h3>
+                                    <p class="fecha">
+                                        <time datetime="2021-02">Febrero 2021</time> -
+                                        <time datetime="2023-04">Abril 2023</time>
+                                    </p>
+                                    <p>
+                                        <strong>Escuela Secundaria de Educación Técnica</strong><br>
+                                        Universidad Nacional de Quilmes
+                                    </p>
+                                    <p>Materia: <em>Interfaces gráficas y desarrollo de aplicaciones</em></p>
+                                    <ul aria-label="Responsabilidades" role="list">
+                                        <li role="listitem">Asistencia en el desarrollo de aplicaciones web.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="col-md-4 mb-1" role="region" aria-labelledby="job2">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-bug" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <h3 class="fs-5 fw-bold text-center" id="job2">Soporte QA</h3>
+                                    <p class="fecha">
+                                        <time datetime="2021-02">Febrero 2021</time> -
+                                        <time datetime="2022-12">Diciembre 2022</time>
+                                    </p>
+                                    <p><strong>Proyecto DIDI:</strong> Proyecto de inclusión digital y financiera
+                                        impulsado por ONG Bitcoin Argentina y el BID.</p>
+                                    <ul aria-label="Responsabilidades">
+                                        <li role="listitem">Soporte nivel 2: gestión de issues reportados.</li>
+                                        <li role="listitem">Testing manual, diseño y ejecución de pruebas, gestión de
+                                            errores.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-md-4 mb-1" role="region" aria-labelledby="job3">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <h3 class="fs-5 fw-bold text-center" id="job3">Ayudante de práctica</h3>
+                                    <p class="fecha">
+                                        <time datetime="2020-02">Febrero 2020</time> -
+                                        <time datetime="2023-07">Julio 2023</time>
+                                    </p>
+                                    <p>
+                                        <strong>Escuela Secundaria de Educación Técnica</strong><br>
+                                        Universidad Nacional de Quilmes
+                                    </p>
+                                    <p>Materia: <em>Laboratorio de testing y seguridad en la información</em></p>
+                                    <ul aria-label="Responsabilidades">
+                                        <li role="listitem">Enseñanza estrategias de teting manual y automanizado.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+                </section>
+                <section class="container" id="educacion" role="region" aria-labelledby="educacion-heading">
+                    <header class="h-seccion">
+                        <h2 id="educacion-heading" class="fs-3 fw-bold text-center">Formación académica</h2>
+                    </header>
+                    <section class="row">
+                        <article class="col-md-6  mb-1" role="region" aria-labelledby="titulo-analista">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <div class="titulo-job">
+                                        <h3 id="titulo-analista" class="fs-5 fw-bold text-center">Analista Programador
+                                            Universitario</h3>
                                     </div>
-                                    <div class="descripcion">
-                                        <div class="titulo-job text-center">
-                                            <div class="job">Soporte QA</div>
+                                    <div class="descripcion-job">
+                                        <div class="progress mb-1" style="height: 25px;">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 91%"
+                                                aria-valuenow="91" aria-valuemin="0" aria-valuemax="100"
+                                                aria-label="Progreso en la carrera Analista programador universitario: 91 por ciento completado">
+                                                91% aprobado
+                                            </div>
                                         </div>
-                                        <div class="descripcion-job">
-                                            <p class="fecha">02/2021 - 12/2022</p>
-                                            <p><span class="donde">Proyecto DIDI: </span>proyecto de inclusión digital y financiera impulsado por ONG Bitcoin Argentina y el Banco Interamericano de Desarrollo.</p>
-                                            <p><ul>
-                                                <li>Soporte nivel 2: Gestionar los issues reportados tanto por el usuario final como por el equipo.</li>
-                                                <li>Responsable de testing manual, diseño de casos de prueba, ejecución de pruebas funcionales y no funcionales, gestión de herramientas de control, seguimiento y reporte de errores</li>
-                                            </ul>
+                                        <p class="fecha">22 materias aprobadas de un total de 24</p>
+                                        <p><strong>Universidad de La Plata</strong> - Facultad de Informática
                                         </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article  class="col-md-4">
-                                <div class="una-exp">
-                                <div class="imagen text-center">
-                                    <i class="fa-solid fa-chalkboard-user"></i>
-                                </div>
-                                <div class="descripcion">
-                                    <div class="titulo-job text-center">
-                                        <div class="job">Ayudante de práctica</div>
-                                    </div>
-                                    <div class="descripcion-job">
-                                        <p class="fecha">02/2020 - 07/2023</p>
-                                        <p><span class="donde">ESET-UNQ:</span>Escuela de Educación secundaria de la Universidad Nacional de Quilmes</p>
-                                        <p>Materia: "Laboratorio de Testing y Seguridad en la información"</p>
-                                    </div>
-                                </div>
-                                </div>
-                            </article>
-                            <article class="col-md-4">
-                                <div class="una-exp">
-                                <div class="imagen text-center">
-                                    <i class="fa-solid fa-chalkboard-user"></i>
-                                </div>
-                                <div class="descripcion">
-                                    <div class="titulo-job text-center">
-                                        <div class="job">Ayudante de práctica</div>
-                                    </div>
-                                    <div class="descripcion-job">
-                                        <p class="fecha">02/2021 - 04/2023</p>
-                                        <p><span class="donde">ESET-UNQ: </span>Escuela de Educación secundaria de la Universidad Nacional de Quilmes</p>
-                                        <p>Materia: "Interfaces gráficas y desarrollo de aplicaciones web"</p>
-                                    </div>
-                                </div>
-                            </div>
-                            </article>
-                    </section>
-                </section>
-                <section class="container" id="voluntariado">
-                    <header class="h-seccion"><h2 class="fs-3 text-center">Proyectos de extensión universitaria</h></header>
-                    <section class="row">
-                            <article class="col-md-4">
-                                <div class="una-exp">
-                                    <div class="imagen text-center">
-                                        <i class="fa-solid fa-code"></i>
-                                    </div>
-                                    <div class="descripcion">
-                                        <div class="titulo-job">
-                                            <div class="job text-center">Responsable de accesibilidad</div>
-                                        </div>
-                                        <div class="descripcion-job">
-                                            <p class="fecha">2022-2023</p>
-                                            <p><span class="donde">Proyecto de extensión de la UNLP:</span> Caminando sobre gliptodontes y tigres diente de sable.
-                                                Talleres multisensoriales sobre paleontología y patrimonio.</p>
-                                            <p>Asesoramiento y pruebas de accesibilidad siguiendo las pautas WCAG, con foco en problemas visuales</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="col-md-4">
-                                <div class=" una-exp">
-                                <div class="imagen text-center">
-                                    <i class="fa-solid fa-chalkboard-user"></i>
-                                </div>
-                                <div class="descripcion">
-                                    <div class="titulo-job">
-                                        <div class="job text-center">Capacitador</div>
-                                    </div>
-                                    <div class="descripcion-job">
-                                        <p class="fecha">2016-2021</p>
-                                        <p><span class="donde">Proyecto de extensión de la UNLP:</span> El barrio va a la Universidad</p>
-                                        <p>Responsable de preparar y dictar clases de informática a niños, adolescentes y adultos.</p>
-                                        <p>Responsable de preparar y mantener las computadoras e instalar y configurar el software necesario para las clases.</p>
-                                    </div>
-                                </div>
-                                </div>
-                            </article>
-                            <article class="col-md-4 una-exp">
-                                <div class=" una-exp">
-                                <div class="imagen text-center">
-                                    <i class="fa-solid fa-code"></i>
-                                </div>
-                                <div class="descripcion">
-                                    <div class="titulo-job">
-                                        <div class="job text-center">Responsable de sitio web</div>
-                                    </div>
-                                    <div class="descripcion-job">
-                                        <p class="fecha">2010-2020</p>
-                                        <p><span class="donde">Proyecto de extensión de la UNLP: </span>"Caminando sobre gliptodontes y tigres diente de sable.
-                                                Talleres multisensoriales sobre paleontología y patrimonio"</p>
-                                        <p><span class="descripcion-max">Código: </span><a href="https://github.com/eseoxalde/caminando_old">Github: caminando_old</a></p>
-                                        <p>Análisis de requerimientos, desarrollo y mantenimiento del sitio utilizando PHP Symfony</p>
-                                    </div>
-                                </div>
-                                </div>
-                            </article>
-                    </section>
-                </section>
-                <section class="container" id="proyectos">
-                    <header class="h-seccion"><h2 class="fs-3 text-center">Proyectos Propios</h2></header>
-                    <section class="row">
-                        <article class="col-md-4 una-exp">
-                            <div class="imagen">
-                                <img src="img/dev.png" alt="dev" />
-                            </div>
-                            <div class="descripcion">
-                                <div class="titulo-job">
-                                    <div class="job">Proyecto uno</div>
-                                    <div class="donde">Objetivo:</div>
-                                    <p>Código: </p>
-                                    <div class="tecnologias">
-                                        <ul>
-                                            <li>Javascript</li>
-                                            <li>react</li>
-                                            <li>progress</li>
-                                            <li>ux/ui</li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </article>
-                        <article class="col-md-4 una-exp">
-                            <div class="imagen">
-                                <img src="img/dev.png" alt="dev" />
-                            </div>
-                            <div class="descripcion">
-                                <div class="titulo-job">
-                                    <div class="job">Proyecto uno</div>
-                                    <div class="donde">Objetivo:</div>
-                                    <p>Código: </p>
-                                    <div class="tecnologias">
-                                        <ul>
-                                            <li>Javascript</li>
-                                            <li>react</li>
-                                            <li>progress</li>
-                                            <li>ux/ui</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            </article>
-                            <article class="col-md-4 una-exp">
-                                <div class="imagen">
-                                    <img src="img/dev.png" alt="dev" />
-                                </div>
-                                <div class="descripcion">
-                                    <div class="titulo-job">
-                                        <div class="job">Proyecto uno</div>
-                                        <div class="donde">Objetivo:</div>
-                                        <p>Código: </p>
-                                        <div class="tecnologias">
-                                            <ul>
-                                                <li>Javascript</li>
-                                                <li>react</li>
-                                                <li>progress</li>
-                                                <li>ux/ui</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                </section>
-                </section>
-                <section class="container" id="educacion">
-                    <header class="h-seccion"><h2 class="fs-3 text-center">Educación</h2></header>
-                    <section class="row">
-                            <article class="col-md-4">
-                                <div class="una-exp">
-                                    <div class="imagen text-center">
-                                        <i class="fa-solid fa-user-graduate"></i>
-                                    </div>
-                                    <div class="descripcion">
-                                        <div class="titulo-job">
-                                            <div class="job text-center">Analista Programador Universitario</div>
-                                        </div>
-                                        <div class="descripcion-job">
-                                            <p class="fecha">89% Completo</p>
-                                            <p><span class="donde">Universidad de La Plata</span> - Facultad de Informática</p>
-                                        </div>
-                                    </div>
-                                    </div>
-                            </article>
-                            <article class="col-md-4">
-                                <div class=" una-exp">
+
+                        <article class="col-md-6  mb-1" role="region" aria-labelledby="titulo-licenciatura">
+                            <div class="una-exp">
                                 <div class="imagen text-center">
-                                    <i class="fa-solid fa-user-graduate"></i>
+                                    <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
                                 </div>
                                 <div class="descripcion">
                                     <div class="titulo-job">
-                                        <div class="job text-center">Licenciatura en Informática</div>
+                                        <h3 id="titulo-licenciatura" class="fs-5 fw-bold text-center">Licenciatura en
+                                            Informática</h3>
                                     </div>
                                     <div class="descripcion-job">
-                                        <p class="fecha">60% completo</p>
-                                        <p><span class="donde">Universidad de La Plata</span> - Facultad de Informática</p>
+                                        <div class="progress mb-1" style="height: 25px;">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 70%"
+                                                aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                                                aria-label="Progreso en la Licenciatura en Informática: 70 por ciento completado">
+                                                70% aprobado
+                                            </div>
+                                        </div>
+                                        <p class="fecha">26 materias aprobadas de un total de 37</p>
+                                        <p><strong>Universidad de La Plata</strong> - Facultad de Informática
+                                        </p>
                                     </div>
                                 </div>
-                                </div>
+                            </div>
                         </article>
-                        <article class="col-md-4">
-                            <div class=" una-exp">
-                            <div class="imagen text-center">
-                                <i class="fa-solid fa-user-graduate"></i>
-                            </div>
-                            <div class="descripcion">
-                                <div class="titulo-job">
-                                    <div class="job text-center">Licenciatura en Ingeniería Informática</div>
-                                </div>
-                                <div class="descripcion-job">
-                                    <p class="fecha">Cursando modulo 8 de 40</p>
-                                    <p><span class="donde">TECH Universidad Tecnológica</span></p>
-                                </div>
-                            </div>
-                            </div>
-                    </article>
                     </section>
-                    <h3 class="fs-3 text-center">Idiomas</h3>
+                </section>
+                <section class="container" id="idiomas" role="region" aria-labelledby="idiomas-heading">
+                    <header class="h-seccion">
+                        <h2 id="idiomas-heading" class="fs-3 fw-bold text-center">Idiomas</h2>
+                    </header>
+
                     <section class="row">
-                        <article class="col-md-4">
-                            <div class=" una-exp">
+                        <article class="col-md-6 mb-1" role="region" aria-labelledby="idioma-ingles">
+                            <div class="una-exp">
                                 <div class="imagen text-center">
-                                    <i class="fa-solid fa-language"></i>
+                                    <i class="fa-solid fa-language" aria-hidden="true"></i>
                                 </div>
                                 <div class="descripcion">
                                     <div class="titulo-job">
-                                        <div class="job">Inglés</div>
+                                        <h3 id="idioma-ingles" class="fs-5 fw-bold text-center">Inglés</h3>
                                     </div>
-                                    <div class="descripcion-job">
+                                    <div class="descripcion-job text-center">
                                         <p><span>Nivel B2</span></p>
                                     </div>
                                 </div>
                             </div>
                         </article>
-                        <article class="col-md-4">
-                            <div class=" una-exp">
-                            <div class="imagen text-center">
-                                <i class="fa-solid fa-language"></i>
-                            </div>
-                            <div class="descripcion">
-                                <div class="titulo-job">
-                                    <div class="job">Francés</div>
+
+                        <article class="col-md-6 mb-1" role="region" aria-labelledby="idioma-frances">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-language" aria-hidden="true"></i>
                                 </div>
-                                <div class="descripcion-job">
-                                    <p><span>Nivel básico</span></p>
+                                <div class="descripcion">
+                                    <div class="titulo-job">
+                                        <h3 id="idioma-frances" class="fs-5 fw-bold text-center">Francés</h3>
+                                    </div>
+                                    <div class="descripcion-job text-center">
+                                        <p><span>Nivel básico</span></p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </article>
+                        </article>
+                    </section>
                 </section>
+                <section class="container" id="extension" role="region" aria-labelledby="extension-heading">
+                    <header class="h-seccion">
+                        <h2 id="extension-heading" class="fs-3 fw-bold text-center">Extensión universitaria</h2>
+                    </header>
+
+                    <section class="row">
+                        <article class="col-md-4 mb-1" role="region" aria-labelledby="ext1-heading">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-code" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <h3 id="ext1-heading" class="fs-5 fw-bold text-center">Responsable de accesibilidad
+                                    </h3>
+                                    <p class="fecha">
+                                        <time datetime="2022">2022</time> -
+                                        <time datetime="2023">2023</time>
+                                    </p>
+                                    <p>
+                                        <strong>Proyecto de extensión:</strong> <em>Caminando sobre gliptodontes y
+                                            tigres
+                                            dientes de sable.
+                                            Talleres multisensoriales sobre paleontología y patrimonio.</em>
+                                    </p>
+                                    <p><strong>Universidad Nacional de La Plata.</strong></p>
+                                    <ul aria-label="Responsabilidades">
+                                        <li role="listitem">Implementación de pruebas de accesibilidad siguiendo las
+                                            pautas WCAG.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-md-4 mb-1" role="region" aria-labelledby="ext2-heading">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <h3 id="ext2-heading" class="fs-5 fw-bold text-center">Capacitador en informática
+                                    </h3>
+                                    <p class="fecha">
+                                        <time datetime="2016">2016</time> -
+                                        <time datetime="2020">2020</time>
+                                    </p>
+                                    <p>
+                                        <strong>Proyecto de extensión:</strong><em>El barrio va a la Universidad.</em>
+                                    </p>
+                                    <p><strong>Univerdidad Nacional de La Plata</strong>
+                                    </p>
+                                    <ul aria-label="Responsabilidades">
+                                        <li role="listitem">Dictado de cursos de informática para niños, adolescentes y
+                                            adultos.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-md-4 mb-1" role="region" aria-labelledby="ext3-heading">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-code" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <h3 id="ext3-heading" class="fs-5 fw-bold text-center">Responsable de sitio web</h3>
+                                    <p class="fecha">
+                                        <time datetime="2016">2016</time> -
+                                        <time datetime="2021">2021</time>
+                                    </p>
+                                    <p>
+                                        <strong>Proyecto de extensión:</strong><em>Caminando sobre gliptodontes y tigres
+                                            dientes de sable.
+                                            Talleres multisensoriales sobre paleontología y patrimonio.</em>
+                                    </p>
+                                    <p>
+                                        <strong>Univerdidad Nacional de La Plata.</strong>
+                                    </p>
+                                    <ul aria-label="Responsabilidades">
+                                        <li role="listitem">Diseño de sitio web del proyecto.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
                 </section>
-            </div> 
-        </div>
-          
-          <div id="QA" class="tabcontent">
+            </div>
+        </section>
+        <!-- QA -->
+        <section id="QA" class="tabcontent">
             <div class="container">
                 <section class="container" id="experienciaQA">
-                    <header class="h-seccion"><h2 class="fs-3 text-center">Experiencia profesional</h2></header>
+                    <header class="h-seccion">
+                        <h2 class="fs-3 fw-bold text-center">Experiencia profesional</h2>
+                    </header>
                     <section class="row">
-                            <article class="col-md-12 ">
-                                <div class="una-expQA mx-auto">
-                                    <div class="imagen text-center">
-                                        <i class="fa-solid fa-bug"></i>
-                                    </div>
-                                    <div class="descripcion">
-                                        <div class="titulo-job text-center">
-                                            <div class="job text-center">Soporte QA</div>
-                                            <div class="tecnologias">
-                                                <ul>
-                                                    <li>Blcokchain</li>
-                                                    <li>Testing Manual</li>
-                                                    <li>Postman</li>
-                                                    <li>Metodologías ágiles</li>
-                                                    <li>Comunicación</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="descripcion-job">
-                                            <p class="fecha">02/2021 - 12/2022.</p>
-                                            <p><span class="donde">Proyecto DIDI: </span>proyecto de inclusión digital y financiera impulsado por ONG Bitcoin Argentina y el Banco Interamericano de Desarrollo.</p>
-                                            <p><a href="https://didi.org.ar/">Conocer más del proyecto aquí: https://didi.org.ar/</a></p>
-                                            <p>Soporte nivel 2: Gestionar los issues reportados tanto por el usuario final como por el equipo.</p>
-                                            <p>Responsable de testing manual, diseño de casos de prueba, ejecución de pruebas funcionales y no funcionales, gestión de herramientas de control, seguimiento y reporte de errores.</p>
-                                            <p>Analisis de requerimientos, busqueda de herramienta para encuestas, adpatación de desarrollo existente para la nueva herramienta, diseño y cordinación de pruebas.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                    </section>
-                </section>
-                <section class="container" id="voluntariadoQA">
-                    <header class="h-seccion"><h2 class="fs-3 text-center">Proyectos de extension universitaria</h></header>
-                    <section class="row">
-                            <article class="col-md-12">
-                                <div class="una-expQA mx-auto">
-                                    <div class="imagen text-center">
-                                        <i class="fa-solid fa-code"></i>
-                                    </div>
-                                    <div class="descripcion">
-                                        <div class="titulo-job">
-                                            <div class="job text-center">Responsable de accesibilidad</div>
-                                            <div class="tecnologias">
-                                                <ul>
-                                                    <li>Pautas WCAG</li>
-                                                    <li>Testing manual</li>
-                                                    <li>Wordpress</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="descripcion-job">
-                                            <p><span class="donde">Proyecto de extensión de la UNLP:</span> Caminando sobre gliptodontes y tigres diente de sable.
-                                                Talleres multisensoriales sobre paleontología y patrimonio.</p>
-                                                <p><a href="https://caminando.unlp.edu.ar/">Conocer más sobre el proyecto en https://caminando.unlp.edu.ar/</a></p>
-                                            <p>Asesoramiento y pruebas de accesibilidad siguiendo las pautas WCAG, con foco en problemas visuales.</p>                                    </div>
-                                    </div>
-                                </div>
-                            </article>
-                    </section>
-                </section>
-                <section id="proyectosQA">
-                    <header class="h-seccion"><h2 class="fs-3 text-center">Proyectos Propios</h2></header>
-                    <section class="row">
-                        <article class="col-md-4 una-exp">
-                            <div class="imagen">
-                                <img src="img/dev.png" alt="dev" />
-                            </div>
-                            <div class="descripcion">
-                                <div class="titulo-job">
-                                    <div class="job">Proyecto uno</div>
-                                    <div class="donde">Objetivo:</div>
-                                    <p>Código: </p>
-                                    <div class="tecnologias">
-                                        <ul>
-                                            <li>Javascript</li>
-                                            <li>react</li>
-                                            <li>progress</li>
-                                            <li>ux/ui</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="col-md-4 una-exp">
-                            <div class="imagen">
-                                <img src="img/dev.png" alt="dev" />
-                            </div>
-                            <div class="descripcion">
-                                <div class="titulo-job">
-                                    <div class="job">Proyecto uno</div>
-                                    <div class="donde">Objetivo:</div>
-                                    <p>Código: </p>
-                                    <div class="tecnologias">
-                                        <ul>
-                                            <li>Javascript</li>
-                                            <li>react</li>
-                                            <li>progress</li>
-                                            <li>ux/ui</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            </article>
-                            <article class="col-md-4 una-exp">
-                                <div class="imagen">
-                                    <img src="img/dev.png" alt="dev" />
-                                </div>
-                                <div class="descripcion">
-                                    <div class="titulo-job">
-                                        <div class="job">Proyecto uno</div>
-                                        <div class="donde">Objetivo:</div>
-                                        <p>Código: </p>
-                                        <div class="tecnologias">
-                                            <ul>
-                                                <li>Javascript</li>
-                                                <li>react</li>
-                                                <li>progress</li>
-                                                <li>ux/ui</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                </section>
-                <section class="container" id="educacion"></section>
-                    <header class="h-seccion"><h2 class="fs-3 text-center">Educación</h2></header>
-                    <section class="row">
-                            <article class="col-md-4 una-exp">
-                                    <div class="imagen">
-                                        <i class="fa-solid fa-user-graduate"></i>
-                                    </div>
-                                    <div class="descripcion">
-                                        <div class="titulo-job">
-                                            <div class="job">Análisis Funcional</div>
-                                        </div>
-                                        <div class="descripcion-job">
-                                            <p class="fecha">09/2022 - 10/2022</p>
-                                            <p><span class="donde">educacionit.com</span> - Facultad de Informática</p>
-                                            <p>Duración: 18 hs</p>
-                                        </div>
-                                    </div>
-                            </article>
-                            <article class="col-md-4 una-exp">
-                                <div class="imagen">
-                                    <i class="fa-solid fa-user-graduate"></i>
-                                </div>
-                                <div class="descripcion">
-                                    <div class="titulo-job">
-                                        <div class="job">Licenciatura en Informática</div>
-                                    </div>
-                                    <div class="descripcion-job">
-                                        <p class="fecha">Cursando...</p>
-                                        <p><span class="donde">Universidad de La Plata</span> - Facultad de Informática</p>
-                                        <p>Ver más...</p>
-                                    </div>
-                                </div>
-                        </article>
-                        <article class="col-md-4 una-exp">
-                            <div class="imagen">
-                                <i class="fa-solid fa-user-graduate"></i>
-                            </div>
-                            <div class="descripcion">
-                                <div class="titulo-job">
-                                    <div class="job">Ingenieria en ---</div>
-                                </div>
-                                <div class="descripcion-job">
-                                    <p class="fecha">Cursando...</p>
-                                    <p><span class="donde">Tech</span></p>
-                                    <p>Ver más...</p>
-                                </div>
-                            </div>
-                    </article>
-                    </section>
-                    <h3 class="fs-3 text-center">Idiomas</h3>
-                    <section class="row">
-                        <article class="col-md-4 una-exp">
-                                <div class="imagen">
-                                    <i class="fa-solid fa-user-graduate"></i>
-                                </div>
-                                <div class="descripcion">
-                                    <div class="titulo-job">
-                                        <div class="job">Inglés</div>
-                                    </div>
-                                    <div class="descripcion-job">
-                                        <p class="fecha">Cursando...</p>
-                                        <p><span class="donde">Universidad de La Plata</span> - Facultad de Informática</p>
-                                        <p>Ver más...</p>
-                                    </div>
-                                </div>
-                        </article>
-                        <article class="col-md-4 una-exp">
-                            <div class="imagen">
-                                <i class="fa-solid fa-user-graduate"></i>
-                            </div>
-                            <div class="descripcion">
-                                <div class="titulo-job">
-                                    <div class="job">Frances</div>
-                                </div>
-                                <div class="descripcion-job">
-                                    <p class="fecha">Cursando...</p>
-                                    <p><span class="donde">Universidad de La Plata</span> - Facultad de Informática</p>
-                                    <p>Ver más...</p>
-                                </div>
-                            </div>
-                    </article>
-                    <article class="col-md-4 una-exp">
-                        <div class="imagen">
-                            <i class="fa-solid fa-user-graduate"></i>
-                        </div>
-                        <div class="descripcion">
-                            <div class="titulo-job">
-                                <div class="job">oto-</div>
-                            </div>
-                            <div class="descripcion-job">
-                                <p class="fecha">Cursando...</p>
-                                <p><span class="donde">Tech</span></p>
-                                <p>Ver más...</p>
-                            </div>
-                        </div>
-                </article>
-                </section>
-                </section>
-                <section class="container" id="educacionQA">
-                    <header class="h-seccion"><h2 class="fs-3 text-center">Cursos</h2></header>
-                    <section class="row">
-                            <article class="col-md-4">
-                                <div class="una-exp">
-                                    <div class="imagen text-center">
-                                        <i class="fa-solid fa-book-open-reader"></i>                                    </div>
-                                    <div class="descripcion">
-                                        <div class="titulo-job">
-                                            <div class="job text-center">Analista Funcional</div>
-                                        </div>
-                                        <div class="descripcion-job">
-                                            <p class="fecha">09/2022 - 10/2022</p>
-                                            <p><span class="donde">educacionit.com</span> - Curso online</p>
-                                            <p>Duración: 18 hs</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="col-md-4">
-                                <div class="una-exp">
-                                <div class="imagen text-center">
-                                    <i class="fa-solid fa-book-open-reader"></i>                                </div>
-                                <div class="descripcion">
-                                    <div class="titulo-job">
-                                        <div class="job text-center">Software Tester QA Avanzado</div>
-                                    </div>
-                                    <div class="descripcion-job">
-                                        <p class="fecha">01/2021 - 02/2021</p>
-                                        <p><span class="donde">educacionit.com</span> - Curso online</p>
-                                        <p>Duración: 18 hs</p>
-                                    </div>
-                                </div>
-                                </div>
-                        </article>
-                        <article class="col-md-4">
+                        <article class="col-md-12 mb-1" role="region" aria-labelledby="job4">
                             <div class="una-exp">
-                            <div class="imagen text-center">
-                                <i class="fa-solid fa-book-open-reader"></i>                            </div>
-                            <div class="descripcion">
-                                <div class="titulo-job">
-                                    <div class="job text-center">Software Tester QA</div>
-                                </div>
-                                <div class="descripcion-job">
-                                    <p class="fecha">11/2020 - 12/2020</p>
-                                    <p><span class="donde">educacionit.com</span> - Curso online</p>
-                                    <p>Duración 18hs</p>
-                                </div>
-                            </div>
-                            </div>
-                        </article>
-                    </section>
-                </section>
-            </div> 
-          </div>
-          
-          <div id="Developer" class="tabcontent">
-            <div class="container">
-                <section class="container" id="experienciaDev">
-                    <header class="h-seccion"><h2 class="fs-3 text-center">Experiencia profesional</h2></header>
-                    <section class="row">
-                            <article class="col-md-4 una-exp">
-                                    <div class="imagen">
-                                        <i class="fa-solid fa-bug"></i>
-                                    </div>
-                                    <div class="descripcion">
-                                        <div class="titulo-job">
-                                            <div class="job">Soporte QA</div>
-                                            <div class="tecnologias">
-                                                <ul>
-                                                    <li>Blcokchain</li>
-                                                    <li>Testing Manual</li>
-                                                    <li>Postman</li>
-                                                    <li>Metodologías ágiles</li>
-                                                    <li>Comunicación</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="descripcion-job">
-                                            <p class="fecha">02/2021 - 12/2022.</p>
-                                            <p><span class="donde">Proyecto DIDI: </span>proyecto de inclusión digital y financiera impulsado por ONG Bitcoin Argentina y el Banco Interamericano de Desarrollo.</p>
-                                            <p><a href="https://didi.org.ar/">Conocer más del proyecto aquí: https://didi.org.ar/</a></p>
-                                            <p>Ver más...</p>
-                                        </div>
-                                    </div>
-                            </article>
-                            <article  class="col-md-4 una-exp">
-                                <div class="imagen">
-                                    <i class="fa-solid fa-chalkboard-user"></i>
-                                </div>
-                                <div class="descripcion">
-                                    <div class="titulo-job">
-                                        <div class="job">Ayudante de práctica</div>
-                                        <div class="tecnologias">
-                                            <ul>
-                                                <li>Comunicacion</li>
-                                                <li>JavaScript</li>
-                                                <li>Casos de pruebas</li>
-                                                <li>Pruebas manuales</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="descripcion-job">
-                                        <p class="fecha">02/2020 - 07/2023</p>
-                                        <p><span class="donde">ESET-UNQ:</span>Escuela de Educación secundaria de la Universidad Nacional de Quilmes</p>
-                                        <p>Materia: "Laboratorio de Testing y Seguridad en la información"</p>
-                                        <p><a href="http://eset.web.unq.edu.ar/">Conocer más de la escuela aquí http://eset.web.unq.edu.ar/</a></p>
-                                        <p>Ver más...</p>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="col-md-4 una-exp">
-                                <div class="imagen">
-                                    <i class="fa-solid fa-chalkboard-user"></i>
-                                </div>
-                                <div class="descripcion">
-                                    <div class="titulo-job">
-                                        <div class="job">Ayudante de práctica</div>
-                                        <div class="tecnologias">
-                                            <ul>
-                                                <li>Comunciacion</li>
-                                                <li>UX</li>
-                                                <li>Accesibilidad</li>
-                                                <li>HTML/CSS</li>
-                                                <li>Javascript</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="descripcion-job">
-                                        <p class="fecha">02/2021 - 04/2023</p>
-                                        <p><span class="donde">ESET-UNQ: </span>Escuela de Educación secundaria de la Universidad Nacional de Quilmes</p>
-                                        <p>Materia: "Interfaces gráficas y desarrollo de aplicaciones web"</p>
-                                        <p><a href="http://eset.web.unq.edu.ar/">Conocer más de la escuela aquí http://eset.web.unq.edu.ar/</a></p>
-                                        <p>Ver más...</p>
-                                    </div>
-                                </div>
-                            </article>
-                    </section>
-                </section>
-                <section class="container" id="voluntariadoDev">
-                    <header class="h-seccion"><h2 class="fs-3 text-center">Proyectos de extension universitaria</h></header>
-                    <section class="row">
-                            <article class="col-md-12">
-                                <div class=" una-exp">
-                                    <div class="imagen text-center">
-                                        <i class="fa-solid fa-code"></i>
-                                    </div>
-                                    <div class="descripcion">
-                                        <div class="titulo-job">
-                                            <div class="job text-center">Responsable de sitio web</div>
-                                        </div>
-                                        <div class="descripcion-job">
-                                            <p class="fecha">2010-2020</p>
-                                            <p><span class="donde">Proyecto de extensión de la UNLP: </span>"Caminando sobre gliptodontes y tigres diente de sable.
-                                                    Talleres multisensoriales sobre paleontología y patrimonio"</p>
-                                            <p><span class="descripcion-max">Código: </span><a href="https://github.com/eseoxalde/caminando_old">Github: caminando_old</a></p>
-                                            <p>Análisis de requerimientos, desarrollo y mantenimiento del sitio utilizando PHP Symfony</p>
-                                        </div>
-                                    </div>
-                                    </div>
-                            </article>
-                    </section>
-                </section>
-                <section class="container" id="proyectosDev">
-                    <header class="h-seccion"><h2 class="fs-3 text-center">Proyectos Propios</h2></header>
-                    <section class="row">
-                        <article class="col-md-4 una-exp">
-                            <div class="imagen">
-                                <img src="img/dev.png" alt="dev" />
-                            </div>
-                            <div class="descripcion">
-                                <div class="titulo-job">
-                                    <div class="job">Proyecto uno</div>
-                                    <div class="donde">Objetivo:</div>
-                                    <p>Código: </p>
-                                    <div class="tecnologias">
-                                        <ul>
-                                            <li>Javascript</li>
-                                            <li>react</li>
-                                            <li>progress</li>
-                                            <li>ux/ui</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="col-md-4 una-exp">
-                            <div class="imagen">
-                                <img src="img/dev.png" alt="dev" />
-                            </div>
-                            <div class="descripcion">
-                                <div class="titulo-job">
-                                    <div class="job">Proyecto uno</div>
-                                    <div class="donde">Objetivo:</div>
-                                    <p>Código: </p>
-                                    <div class="tecnologias">
-                                        <ul>
-                                            <li>Javascript</li>
-                                            <li>react</li>
-                                            <li>progress</li>
-                                            <li>ux/ui</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            </article>
-                            <article class="col-md-4 una-exp">
-                                <div class="imagen">
-                                    <img src="img/dev.png" alt="dev" />
-                                </div>
-                                <div class="descripcion">
-                                    <div class="titulo-job">
-                                        <div class="job">Proyecto uno</div>
-                                        <div class="donde">Objetivo:</div>
-                                        <p>Código: </p>
-                                        <div class="tecnologias">
-                                            <ul>
-                                                <li>Javascript</li>
-                                                <li>react</li>
-                                                <li>progress</li>
-                                                <li>ux/ui</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                </section>
-                </section>
-                <section class="container" id="educacionDev">
-                    <header class="h-seccion"><h2 class="fs-3 text-center">Educación</h2></header>
-                    <section class="row">
-                            <article class="col-md-4">
-                                <div class="una-exp">
-                                    <div class="imagen text-center">
-                                        <i class="fa-solid fa-book-open-reader"></i>                                    </div>
-                                    <div class="descripcion">
-                                        <div class="titulo-job">
-                                            <div class="job text-center">Diplomatura en Python</div>
-                                        </div>
-                                        <div class="descripcion-job">
-                                            <p class="fecha">04/2023 - 11/2023</p>
-                                            <p><span class="donde">UTN BA</span> - Curso online</p>
-                                            <p>Duración: 225 hs</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="col-md-4">
-                                <div class="una-exp">
                                 <div class="imagen text-center">
-                                    <i class="fa-solid fa-book-open-reader"></i>                                </div>
+                                    <i class="fa-solid fa-bug" aria-hidden="true"></i>
+                                </div>
                                 <div class="descripcion">
-                                    <div class="titulo-job">
-                                        <div class="job">Javascript Desarrollador Avanzado</div>
-                                    </div>
-                                    <div class="descripcion-job">
-                                        <p class="fecha">09/2022 - 12/2022</p>
-                                        <p><span class="donde">educacionit.com</span> - Curso online</p>
-                                        <p>Duración: 36 hs</p>
-                                    </div>
+                                    <h3 class="fs-5 fw-bold text-center" id="job4">Soporte QA</h3>
+                                    <p class="fecha">
+                                        <time datetime="2021-02">Febrero 2021</time> -
+                                        <time datetime="2022-12">Diciembre 2022</time>
+                                    </p>
+                                    <p>
+                                        <strong>Proyecto DIDI:</strong> Proyecto de inclusión digital y financiera
+                                        impulsado por ONG Bitcoin Argentina y el BID.
+                                    </p>
+                                    <ul class="tecnologias mb-2" role="list" aria-label="Tecnologías utilizadas">
+                                        <li role="listitem">Blockchain</li>
+                                        <li role="listitem">Testing manual</li>
+                                        <li role="listitem">Postman</li>
+                                        <li role="listitem">Metodologías ágiles</li>
+                                        <li role="listitem">Comunicación</li>
+                                    </ul>
+                                    <p>
+                                        <a href="https://didi.org.ar/" target="_blank" rel="noopener noreferrer"
+                                            aria-label="Conocer más sobre el Proyecto DIDI en una nueva pestaña">
+                                            Conocer más del proyecto aquí
+                                        </a>
+                                    </p>
+                                    <h4 id="job4-responsabilidades">Tareas y responsabilidades</h4>
+                                    <ul aria-labelledby="job4-responsabilidades" role="list">
+                                        <li role="listitem">Soporte nivel 2: gestión de issues reportados, tanto por el
+                                            usuario final como por el equipo.</li>
+                                        <li role="listitem">Responsable de testing manual, diseño de casos de prueba,
+                                            ejecución de pruebas funcionales y no funcionales, gestión de herramientas
+                                            de control, seguimiento y reporte de errores.</li>
+                                        <li role="listitem">Análisis de requerimientos, búsqueda de herramientas para
+                                            encuestas, adaptación de desarrollo existente para la nueva herramienta,
+                                            diseño y coordinación de pruebas.</li>
+                                    </ul>
                                 </div>
                             </div>
                         </article>
                     </section>
                 </section>
-            </div> 
-          </div>
-          
-          <div id="Docente" class="tabcontent">
+
+                <section class="container" id="extensionQA" role="region" aria-labelledby="extension-qa-heading">
+                    <header class="h-seccion">
+                        <h2 id="extension-qa-heading" class="fs-3 fw-bold text-center">Extensión universitaria</h2>
+                    </header>
+                    <section class="row">
+                        <article class="col-md-12 mb-1" role="region" aria-labelledby="ext4-heading">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-brands fa-accessible-icon" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <h3 id="ext4-heading" class="fs-5 fw-bold text-center">Responsable de accesibilidad
+                                        web</h3>
+                                    <p class="fecha">
+                                        <time datetime="2022">2022</time> -
+                                        <time datetime="2023">2023</time>
+                                    </p>
+                                    <p>
+                                        <strong>Proyecto de extensión:</strong><em>Caminando sobre gliptodontes y tigres
+                                            dientes de sable.
+                                            Talleres multisensoriales sobre paleontología y patrimonio.</em>
+                                    </p>
+                                    <p>
+                                        <strong>Univerdidad Nacional de La Plata.</strong>
+                                    </p>
+                                    <ul class="tecnologias mb-2" role="list" aria-label="Tecnologías utilizadas">
+                                        <li role="listitem">Paautas WCAG</li>
+                                        <li role="listitem">Testing manual</li>
+                                        <li role="listitem">Wordpress</li>
+                                    </ul>
+                                    <p>
+                                        <a href="https://caminando.unlp.edu.ar/" target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label="Conocer más sobre el proyecto de Caminando en una nueva pestaña">
+                                            Conocer más del proyecto aquí
+                                        </a>
+                                    </p>
+                                    <ul aria-label="Responsabilidades">
+                                        <li role="listitem">Asesoramiento y pruebas de accesibilidad siguiendo las
+                                            pautas WCAG.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+                </section>
+                <section class="container" id="cursosQA">
+                    <header class="h-seccion">
+                        <h2 class="fs-3 fw-bold text-center">Educación</h2>
+                    </header>
+                    <section class="row">
+                        <article class="col-md-4 mb-1" role="region" aria-labelledby="curso1">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-book-open-reader" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <h3 class="fs-5 fw-bold text-center" id="curso1">Analista funcional</h3>
+
+                                    <p class="fecha">
+                                        <time datetime="2022-09">Septiembre 2022</time> -
+                                        <time datetime="2022-10">Octubre 2022</time>
+                                    </p>
+                                    <p>
+                                        <a href="https://www.educacionit.com/" target="_blank" rel="noopener noreferrer"
+                                            aria-label="Conocer más sobre EducaciónIT en una nueva pestaña">
+                                            educacionit.com
+                                        </a> - Curso online
+                                    </p>
+                                    <p aria-label="Duración del curso: 18 horas">Duración: 18 hs</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-md-4 mb-1" role="region" aria-labelledby="curso2">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-book-open-reader" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <h3 class="fs-5 fw-bold text-center" id="curso2">Software tester QA avanzado</h3>
+                                    <p class="fecha">
+                                        <time datetime="2021-01">Enero 2021</time> -
+                                        <time datetime="2021-02">Febrero 2021</time>
+                                    </p>
+                                    <p>
+                                        <a href="https://www.educacionit.com/" target="_blank" rel="noopener noreferrer"
+                                            aria-label="Conocer más sobre EducaciónIT en una nueva pestaña">
+                                            educacionit.com
+                                        </a> - Curso online
+                                    </p>
+                                    <p aria-label="Duración del curso: 18 horas">Duración: 18 hs</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-md-4 mb-1" role="region" aria-labelledby="curso3">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-book-open-reader" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <h3 class="fs-5 fw-bold text-center" id="curso3">Software tester QA</h3>
+
+                                    <p class="fecha">
+                                        <time datetime="2020-11">Noviembre 2020</time> -
+                                        <time datetime="2020-12">Diciembre 2020</time>
+                                    </p>
+                                    <p>
+                                        <a href="https://www.educacionit.com/" target="_blank" rel="noopener noreferrer"
+                                            aria-label="Conocer más sobre EducaciónIT en una nueva pestaña">
+                                            educacionit.com
+                                        </a> - Curso online
+                                    </p>
+                                    <p aria-label="Duración del curso: 18 horas">Duración: 18 hs</p>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+                </section>
+            </div>
+        </section>
+        <!-- DEVELOPER -->
+        <section id="Developer" class="tabcontent">
+            <div class="container">
+                <section class="container" id="extension-dev" role="region" aria-labelledby="extension-dev-heading">
+                    <header class="h-seccion">
+                        <h2 id="extension-dev-heading" class="fs-3 fw-bold text-center">Extensión universitaria</h2>
+                    </header>
+                    <section class="row">
+                        <article class="col-md-12 mb-1" role="region" aria-labelledby="ext5-heading">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-code" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <h3 id="ext5-heading" class="fs-5 fw-bold text-center">Responsable de sitio web</h3>
+                                    <p class="fecha">
+                                        <time datetime="2010">2010</time> -
+                                        <time datetime="2020">2020</time>
+                                    </p>
+                                    <p>
+                                        <strong>Proyecto de extensión:</strong><em>Caminando sobre gliptodontes y tigres
+                                            dientes de sable.
+                                            Talleres multisensoriales sobre paleontología y patrimonio.</em>
+                                    </p>
+                                    <p>
+                                        <strong>Univerdidad Nacional de La Plata.</strong>
+                                    </p>
+                                    <ul class="tecnologias mb-2" role="list" aria-label="Tecnologías utilizadas">
+                                        <li role="listitem">PHP - Symfony</li>
+                                        <li role="listitem">Análisis de requeimientos</li>
+                                        <li role="listitem">Pruebas de aceptación</li>
+                                    </ul>
+                                    <p>
+                                        <a href="https://caminando.unlp.edu.ar/" target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label="Conocer más sobre el proyecto de Caminando en una nueva pestaña">
+                                            Conocer más del proyecto aquí
+                                        </a>
+                                    </p>
+                                    <p>
+                                        <a href="https://github.com/eseoxalde/caminando_old" target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label="Reviar el código del proyecto de Caminando en una nueva pestaña">
+                                            <i class="fa-brands fa-github" title="Código en Github"></i> Ver el
+                                            código en mi Github
+                                        </a>
+                                    </p>
+                                    <ul aria-label="Responsabilidades">
+                                        <li role="listitem">Análisis de requerimientos, desarrollo y mantenimiento del
+                                            sitio utilizando PHP Symfony.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+                </section>
+                <section class="container" id="experienciaDev">
+                    <header class="h-seccion">
+                        <h2 class="fs-3 fw-bold text-center">Educación</h2>
+                    </header>
+                    <section class="row">
+                        <article class="col-md-4 mb-1" role="region" aria-labelledby="curso4">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-book-open-reader" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <h3 class="fs-5 fw-bold text-center" id="curso4">Diplomatura en Python</h3>
+
+                                    <p class="fecha">
+                                        <time datetime="2023-04">Abril 2023</time> -
+                                        <time datetime="2023-11">Noviembre 2023</time>
+                                    </p>
+                                    <p>
+                                        <a href="https://sceu.frba.utn.edu.ar/e-learning/" target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label="Conocer más sobre la diplomatura en una nueva pestaña">
+                                            Centro de e-Learning - utn.ba
+                                        </a> - Curso online
+                                    </p>
+                                    <p aria-label="Duración del curso: 225 horas">Duración: 225 hs</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-md-4 mb-1" role="region" aria-labelledby="curso5">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-book-open-reader" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <h3 class="fs-5 fw-bold text-center" id="curso5">Javascript Desarrollador Avanzado
+                                    </h3>
+                                    <p class="fecha">
+                                        <time datetime="2022-09">Septiembre 2022</time> -
+                                        <time datetime="2022-12">Diciembre 2022</time>
+                                    </p>
+                                    <p>
+                                        <a href="https://www.educacionit.com/" target="_blank" rel="noopener noreferrer"
+                                            aria-label="Conocer más sobre EducaciónIT en una nueva pestaña">
+                                            educacionit.com
+                                        </a> - Curso online
+                                    </p>
+                                    <p aria-label="Duración del curso: 36 horas">Duración: 36 hs</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-md-4 mb-1" role="region" aria-labelledby="curso6">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-book-open-reader" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <h3 class="fs-5 fw-bold text-center" id="curso6">Seguridad Web: SQL Injection & XSS
+                                    </h3>
+                                    <p class="fecha">
+                                        <time datetime="2021-02">Febrero 2021</time> -
+                                        <time datetime="2021-03">Marzo 2021</time>
+                                    </p>
+                                    <p>
+                                        <a href="https://www.educacionit.com/" target="_blank" rel="noopener noreferrer"
+                                            aria-label="Conocer más sobre EducaciónIT en una nueva pestaña">
+                                            educacionit.com
+                                        </a> - Curso online
+                                    </p>
+                                    <p aria-label="Duración del curso: 36 horas">Duración: 15 hs</p>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+                </section>
+            </div>
+        </section>
+        <!-- DOCENTE -->
+        <section id="Docente" class="tabcontent">
             <div class="container">
                 <section class="container" id="experienciaDoc">
-                    <header class="h-seccion"><h2 class="fs-3 text-center">Experiencia profesional</h2></header>
+                    <header class="h-seccion">
+                        <h2 class="fs-3 fw-bold text-center">Experiencia profesional</h2>
+                    </header>
                     <section class="row">
-                            <article  class="col-md-6">
-                                <div class=" una-exp">
-                                <div class="imagen text-center">
-                                    <i class="fa-solid fa-chalkboard-user"></i>
-                                </div>
-                                <div class="descripcion">
-                                    <div class="titulo-job">
-                                        <div class="job text-center">Ayudante de práctica</div>
-                                        <div class="tecnologias">
-                                            <ul>
-                                                <li>Comunicacion</li>
-                                                <li>JavaScript</li>
-                                                <li>Casos de pruebas</li>
-                                                <li>Pruebas manuales</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="descripcion-job">
-                                        <p class="fecha">02/2020 - 07/2023</p>
-                                        <p><span class="donde">ESET-UNQ:</span>Escuela de Educación secundaria de la Universidad Nacional de Quilmes</p>
-                                        <p>Materia: "Laboratorio de Testing y Seguridad en la información"</p>
-                                        <p><a href="http://eset.web.unq.edu.ar/">Conocer más de la escuela aquí http://eset.web.unq.edu.ar/</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            </article>
-                            <article class="col-md-6">
-                                <div class="una-exp">
-                                <div class="imagen text-center">
-                                    <i class="fa-solid fa-chalkboard-user"></i>
-                                </div>
-                                <div class="descripcion">
-                                    <div class="titulo-job">
-                                        <div class="job text-center">Ayudante de práctica</div>
-                                        <div class="tecnologias">
-                                            <ul>
-                                                <li>Comunciacion</li>
-                                                <li>UX</li>
-                                                <li>Accesibilidad</li>
-                                                <li>HTML/CSS</li>
-                                                <li>Javascript</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="descripcion-job">
-                                        <p class="fecha">02/2021 - 04/2023</p>
-                                        <p><span class="donde">ESET-UNQ: </span>Escuela de Educación secundaria de la Universidad Nacional de Quilmes</p>
-                                        <p>Materia: "Interfaces gráficas y desarrollo de aplicaciones web"</p>
-                                        <p><a href="http://eset.web.unq.edu.ar/">Conocer más de la escuela aquí http://eset.web.unq.edu.ar/</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            </article>
-                    </section>
-                </section>
-                <section class="container" id="voluntariadoDoc">
-                    <header class="h-seccion"><h2 class="fs-3 text-center">Proyectos de extension universitaria</h></header>
-                    <section class="row">
-                            <article class="col-md-12">
-                                <div class="una-exp">
-                                <div class="imagen text-center">
-                                    <i class="fa-solid fa-chalkboard-user"></i>
-                                </div>
-                                <div class="descripcion">
-                                    <div class="titulo-job">
-                                        <div class="job text-center">Capacitador</div>
-                                        <div class="tecnologias">
-                                            <ul>
-                                                <li>Comunicación</li>
-                                                <li>Paquete office</li>
-                                                <li>Scratch</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="descripcion-job">
-                                        <p><span class="donde">Proyecto de extensión de la UNLP:</span> El barrio va a la Universidad</p>
-                                        <p><a href="https://unlp.edu.ar/extension/la_secretaria_de_extension/extension_facultades/el-barrio-va-a-la-universidad-9173-14173/">Conocer máss sobre el proyecto</a></p>
-                                        <p>Responsable de preparar y dictar clases de informática a niños, adolescentes y adultos.</p>
-                                            <p>Responsable de preparar y mantener las computadoras e instalar y configurar el software necesario para las clases.
-                                            </p>
-                                    </div>
-                                </div>
-                            </div>
-                            </article>
-                    </section>
-                </section>
-                <section id="proyectosDoc">
-                    <header class="h-seccion"><h2 class="fs-3 text-center">Proyectos Propios</h2></header>
-                    <section class="row">
-                        <article class="col-md-4 una-exp">
-                            <div class="imagen">
-                                <img src="img/dev.png" alt="dev" />
-                            </div>
-                            <div class="descripcion">
-                                <div class="titulo-job">
-                                    <div class="job">Proyecto uno</div>
-                                    <div class="donde">Objetivo:</div>
-                                    <p>Código: </p>
-                                    <div class="tecnologias">
-                                        <ul>
-                                            <li>Javascript</li>
-                                            <li>react</li>
-                                            <li>progress</li>
-                                            <li>ux/ui</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="col-md-4 una-exp">
-                            <div class="imagen">
-                                <img src="img/dev.png" alt="dev" />
-                            </div>
-                            <div class="descripcion">
-                                <div class="titulo-job">
-                                    <div class="job">Proyecto uno</div>
-                                    <div class="donde">Objetivo:</div>
-                                    <p>Código: </p>
-                                    <div class="tecnologias">
-                                        <ul>
-                                            <li>Javascript</li>
-                                            <li>react</li>
-                                            <li>progress</li>
-                                            <li>ux/ui</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                            <article class="col-md-4 una-exp">
-                                <div class="imagen">
-                                    <img src="img/dev.png" alt="dev" />
-                                </div>
-                                <div class="descripcion">
-                                    <div class="titulo-job">
-                                        <div class="job">Proyecto uno</div>
-                                        <div class="donde">Objetivo:</div>
-                                        <p>Código: </p>
-                                        <div class="tecnologias">
-                                            <ul>
-                                                <li>Javascript</li>
-                                                <li>react</li>
-                                                <li>progress</li>
-                                                <li>ux/ui</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                    </section>
-                </section>
-                <section class="container" id="educacionDoc">
-                    <header class="h-seccion"><h2 class="fs-3 text-center">Educación</h2></header>
-                    <section class="row">
-                            <article class="col-md-6">
-                                <div class="una-exp">
-                                <div class="imagen text-center">
-                                    <i class="fa-solid fa-user-graduate"></i>
-                                </div>
-                                <div class="descripcion">
-                                    <div class="titulo-job">
-                                        <div class="job text-center">Licenciatura en Informática</div>
-                                    </div>
-                                    <div class="descripcion-job">
-                                        <p class="fecha">60% completo</p>
-                                        <p><span class="donde">Universidad de La Plata</span> - Facultad de Informática</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="col-md-6">
+                        <article class="col-md-4 mb-1" role="region" aria-labelledby="job5">
                             <div class="una-exp">
-                            <div class="imagen text-center">
-                                <i class="fa-solid fa-user-graduate"></i>
-                            </div>
-                            <div class="descripcion">
-                                <div class="titulo-job">
-                                    <div class="job text-center">Tramo de Formación Pedagógica para nivel medio</div>
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
                                 </div>
-                                <div class="descripcion-job">
-                                    <p class="fecha">En curso</p>
-                                    <p><span class="donde">Universidad de Ciencias Empresariales y Sociales.</span></p>
-                                    <p>Materias aprobadas:71.42%</p>
+                                <div class="descripcion">
+                                    <h3 class="fs-5 fw-bold text-center" id="job5">Docente suplente</h3>
+                                    <p class="fecha">
+                                        <time datetime="2021-07">Julio 2021</time> -
+                                        <time datetime="2023-04">Diciembre 2021</time>
+                                    </p>
+                                    <p>
+                                        <strong>Escuela Secundaria de Educación Técnica</strong><br>
+                                        Universidad Nacional de Quilmes
+                                    </p>
+                                    <p>Materia: <em>Interfaces gráficas y desarrollo de aplicaciones</em></p>
+                                    <ul class="tecnologias mb-2" role="list" aria-label="Tecnologías utilizadas">
+                                        <li role="listitem">HTML + CSS</li>
+                                        <li role="listitem">Javascript</li>
+                                        <li role="listitem">Accesibilidad Web</li>
+                                        <li role="listitem">UX - UI</li>
+                                        <li role="listitem">Comunicación</li>
+                                    </ul>
+                                    <p>
+                                        <a href="https:/eset.web.unq.edu.ar" target="_blank" rel="noopener noreferrer"
+                                            aria-label="Conocer más sobre la escuela en una nueva pestaña">
+                                            Conocer más del proyecto aquí
+                                        </a>
+                                    </p>
+                                    <ul aria-label="Responsabilidades" role="list">
+                                        <li role="listitem">Asistencia en el desarrollo de aplicaciones web.</li>
+                                    </ul>
                                 </div>
                             </div>
-                        </div>
-                    </article>
+                        </article>
+                        <article class="col-md-4 mb-1" role="region" aria-labelledby="job6">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <h3 class="fs-5 fw-bold text-center" id="job6">Ayudante de práctica</h3>
+                                    <p class="fecha">
+                                        <time datetime="2021-02">Febrero 2021</time> -
+                                        <time datetime="2023-04">Abril 2023</time>
+                                    </p>
+                                    <p>
+                                        <strong>Escuela Secundaria de Educación Técnica</strong><br>
+                                        Universidad Nacional de Quilmes
+                                    </p>
+                                    <p>Materia: <em>Interfaces gráficas y desarrollo de aplicaciones</em></p>
+                                    <ul class="tecnologias mb-2" role="list" aria-label="Tecnologías utilizadas">
+                                        <li role="listitem">HTML + CSS</li>
+                                        <li role="listitem">Javascript</li>
+                                        <li role="listitem">Accesibilidad Web</li>
+                                        <li role="listitem">UX - UI</li>
+                                        <li role="listitem">Comunicación</li>
+                                    </ul>
+                                    <p>
+                                        <a href="https:/eset.web.unq.edu.ar" target="_blank" rel="noopener noreferrer"
+                                            aria-label="Conocer más sobre la escuela en una nueva pestaña">
+                                            Conocer más del proyecto aquí
+                                        </a>
+                                    </p>
+                                    <ul aria-label="Responsabilidades" role="list">
+                                        <li role="listitem">Dictado de clases de desarrollo de aplicaciones web.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-md-4 mb-1" role="region" aria-labelledby="job7">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <h3 class="fs-5 fw-bold text-center" id="job7">Ayudante de práctica</h3>
+                                    <p class="fecha">
+                                        <time datetime="2020-02">Febrero 2020</time> -
+                                        <time datetime="2023-07">Julio 2023</time>
+                                    </p>
+                                    <p>
+                                        <strong>Escuela Secundaria de Educación Técnica</strong><br>
+                                        Universidad Nacional de Quilmes
+                                    </p>
+                                    <p>Materia: <em>Laboratorio de testing y seguridad en la información</em></p>
+                                    <ul class="tecnologias mb-2" role="list" aria-label="Tecnologías utilizadas">
+                                        <li role="listitem">Testing manual</li>
+                                        <li role="listitem">Jest</li>
+                                        <li role="listitem">Testing automático</li>
+                                        <li role="listitem">Comunicación</li>
+                                    </ul>
+                                    <p>
+                                        <a href="https:/eset.web.unq.edu.ar" target="_blank" rel="noopener noreferrer"
+                                            aria-label="Conocer más sobre la escuela en una nueva pestaña">
+                                            Conocer más del proyecto aquí
+                                        </a>
+                                    </p>
+                                    <ul aria-label="Responsabilidades">
+                                        <li role="listitem">Enseñanza estrategias de teting manual y automanizado.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
                     </section>
-                    
                 </section>
-            </div> 
-          </div>
-        
+                <section class="container" id="educacionDoc" role="region" aria-labelledby="educacion-doc-heading">
+                    <header class="h-seccion">
+                        <h2 id="educacion-doc-heading" class="fs-3 fw-bold text-center">Formación académica</h2>
+                    </header>
+                    <section class="row">
+                        <article class="col-md-4 mb-1" role="region" aria-labelledby="titulo-tramo">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <div class="titulo-job">
+                                        <h3 id="titulo-tramo" class="fs-5 fw-bold text-center">
+                                            Tramo de Formación Pedagógica para Nivel Medio
+                                        </h3>
+                                    </div>
+                                    <div class="descripcion-job">
+                                        <p class="fecha">
+                                            <time datetime="2025">Finalizado en 2025</time>
+                                        </p>
+                                        <p>Carga horaria total: 932 horas</p>
+                                        <p>
+                                            <strong>Universidad de Ciencias Empresariales y Sociales (UCES)</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-md-4  mb-1" role="region" aria-labelledby="titulo-analista2">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <div class="titulo-job">
+                                        <h3 id="titulo-analista2" class="fs-5 fw-bold text-center">Analista Programador
+                                            Universitario</h3>
+                                    </div>
+                                    <div class="descripcion-job">
+                                        <div class="progress mb-1" style="height: 25px;">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 91%"
+                                                aria-valuenow="91" aria-valuemin="0" aria-valuemax="100"
+                                                aria-label="Progreso en la carrera Analista programador universitario: 91 por ciento completado">
+                                                91% aprobado
+                                            </div>
+                                        </div>
+                                        <p class="fecha">22 materias aprobadas de un total de 24</p>
+                                        <p><strong>Universidad de La Plata</strong> - Facultad de Informática
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-md-4 mb-1" role="region" aria-labelledby="titulo-tecnico">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <div class="titulo-job">
+                                        <h3 id="titulo-tecnico" class="fs-5 fw-bold text-center">
+                                            Técnico en informática personal y profesional
+                                        </h3>
+                                    </div>
+                                    <div class="descripcion-job">
+                                        <p class="fecha">
+                                            <time datetime="2025">Finalizado en 2021</time>
+                                        </p>
+                                        <p>Escuela secundaria técnica N°2
+                                            <strong>"Ing. Emilio Rebuelto"</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+                </section>
+                <section class="container" id="extension-doc" role="region" aria-labelledby="extension-doc-heading">
+                    <header class="h-seccion">
+                        <h2 id="extension-doc-heading" class="fs-3 fw-bold text-center">Extensión universitaria</h2>
+                    </header>
+
+                    <section class="row">
+                        <article class="col-md-12 mb-1" role="region" aria-labelledby="ext6-heading">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <h3 id="ext6-heading" class="fs-5 fw-bold text-center">Capacitador en informática
+                                    </h3>
+                                    <p class="fecha">
+                                        <time datetime="2016">2016</time> -
+                                        <time datetime="2020">2020</time>
+                                    </p>
+                                    <ul class="tecnologias mb-2" role="list" aria-label="Tecnologías utilizadas">
+                                        <li role="listitem">Conceptos de computación</li>
+                                        <li role="listitem">Ofimática</li>
+                                        <li role="listitem">Scratch</li>
+                                        <li role="listitem">Comunicación</li>
+                                    </ul>
+                                    <p>
+                                        <strong>Proyecto de extensión: </strong><em>El barrio va a la Universidad.</em>
+                                    </p>
+                                    <p><strong>Univerdidad Nacional de La Plata</strong>
+                                    </p>
+                                    <ul aria-label="Responsabilidades">
+                                        <li role="listitem">Dictado de cursos de informática para niños, adolescentes y
+                                            adultos.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+                </section>
+                <section class="container" id="cursosDoc">
+                    <header class="h-seccion">
+                        <h2 class="fs-3 fw-bold text-center">Educación</h2>
+                    </header>
+                    <section class="row">
+                        <article class="col-md-12 mb-1" role="region" aria-labelledby="curso7">
+                            <div class="una-exp">
+                                <div class="imagen text-center">
+                                    <i class="fa-solid fa-book-open-reader" aria-hidden="true"></i>
+                                </div>
+                                <div class="descripcion">
+                                    <h3 class="fs-5 fw-bold text-center" id="curso7">Actualización Académica en
+                                        Educación Sexual Integral</h3>
+
+                                    <p class="fecha">
+                                        <time datetime="2021-12">Diciembre 2021
+                                        </time>
+                                    </p>
+                                    <p>
+                                        <a href="https://azulformacionsuperior.com/" target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label="Conocer más sobre la Universidad en una nueva pestaña">
+                                            Universidad de Ciencias Empresariales y Sociales
+                                        </a> - Curso online
+                                    </p>
+                                    <p aria-label="Duración del curso: 225 horas">Duración: 20 hs</p>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+                </section>
+            </div>
+        </section>
     </main>
     <footer>
         <div>
-            <div>2024 Ese Kai Oxalde</div>
+            <div>2025 Ese Kai Oxalde</div>
         </div>
         <div>
             <nav>
                 <ul class="list-inline">
-                    <li><a href="https://github.com/eseoxalde" title="mi Github"><i class="fa-brands fa-square-github"></i> Github</li>
-                    <li><a href="https://www.linkedin.com/in/eseoxalde/" title="Linkedln" ><i class="fa-brands fa-linkedin"></i> Linkedln</a></li>
+                    <li><a href="https://github.com/eseoxalde" title="mi Github"><i
+                                class="fa-brands fa-square-github"></i> Github</li>
+                    <li><a href="https://www.linkedin.com/in/eseoxalde/" title="Linkedln"><i
+                                class="fa-brands fa-linkedin"></i> Linkedln</a></li>
                 </ul>
             </nav>
         </div>
@@ -1056,11 +929,10 @@
 
             document.getElementById(nombre).style.display = "block";
             evt.currentTarget.className += " active";
-            }
+        }
 
-            document.getElementById("defaultOpen").click();
+        document.getElementById("defaultOpen").click();
     </script>
-
-
 </body>
+
 </html>
