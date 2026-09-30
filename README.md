@@ -1,10 +1,6 @@
 ## Hi there 👋 I'm Ese Oxalde
 
-- 🌱 I’m currently learning Deep Learning
-
 - 📫 Como contactarme:ese.oxalde@gmail.com
-
-*
 
 <!--
 **eseoxalde/eseoxalde** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
