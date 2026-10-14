@@ -1,232 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>document.documentElement.classList.add('js')</script>
+  <meta name="color-scheme" content="light dark">
+  <script>
+    (function () {
+      var raiz = document.documentElement, tema;
+      raiz.classList.add('js');
+      try { tema = localStorage.getItem('tema'); } catch (e) {}
+      raiz.dataset.theme = tema || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    })();
+  </script>
   <title>Ese Kai Oxalde - Desarrollo de software</title>
-  <meta name="description"
-    content="Portfolio de desarrollo de software. Proyectos de facultad, proyectos propios, pruebas automáticas, clases de informática y extensión universitaria.">
+  <meta name="description" content="Portfolio de desarrollo de software. Proyectos de facultad, a pedido y personales, pruebas automáticas, clases de informática y extensión universitaria.">
   <link rel="icon" href="assets/marca-ese-kai.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/marca-ese-kai.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400;500&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400;500&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/sections.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
-
-<body data-iconos="menu portada filtros proyectos detalles voluntariado trayectoria contacto">
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-    <symbol id="i-bug" viewBox="0 0 24 24">
-      <path d="M12 20v-9" />
-      <path d="M14 7a4 4 0 0 1 4 4v3a6 6 0 0 1-12 0v-3a4 4 0 0 1 4-4z" />
-      <path d="M14.12 3.88 16 2" />
-      <path d="M21 21a4 4 0 0 0-3.81-4" />
-      <path d="M21 5a4 4 0 0 1-3.55 3.97" />
-      <path d="M22 13h-4" />
-      <path d="M3 21a4 4 0 0 1 3.81-4" />
-      <path d="M3 5a4 4 0 0 0 3.55 3.97" />
-      <path d="M6 13H2" />
-      <path d="m8 2 1.88 1.88" />
-      <path d="M9 7.13V6a3 3 0 1 1 6 0v1.13" />
-    </symbol>
-    <symbol id="i-presentation" viewBox="0 0 24 24">
-      <path d="M2 3h20" />
-      <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3" />
-      <path d="m7 21 5-5 5 5" />
-    </symbol>
-    <symbol id="i-graduation-cap" viewBox="0 0 24 24">
-      <path
-        d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
-      <path d="M22 10v6" />
-      <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
-    </symbol>
-    <symbol id="i-rocket" viewBox="0 0 24 24">
-      <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
-      <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09" />
-      <path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z" />
-      <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05" />
-    </symbol>
-    <symbol id="i-handshake" viewBox="0 0 24 24">
-      <path d="m11 17 2 2a1 1 0 1 0 3-3" />
-      <path
-        d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
-      <path d="m21 3 1 11h-2" />
-      <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
-      <path d="M3 4h8" />
-    </symbol>
-    <symbol id="i-layout-grid" viewBox="0 0 24 24">
-      <rect width="7" height="7" x="3" y="3" rx="1" />
-      <rect width="7" height="7" x="14" y="3" rx="1" />
-      <rect width="7" height="7" x="14" y="14" rx="1" />
-      <rect width="7" height="7" x="3" y="14" rx="1" />
-    </symbol>
-    <symbol id="i-user" viewBox="0 0 24 24">
-      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-      <circle cx="12" cy="7" r="4" />
-    </symbol>
-    <symbol id="i-code-xml" viewBox="0 0 24 24">
-      <path d="m18 16 4-4-4-4" />
-      <path d="m6 8-4 4 4 4" />
-      <path d="m14.5 4-5 16" />
-    </symbol>
-    <symbol id="i-briefcase" viewBox="0 0 24 24">
-      <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-      <rect width="20" height="14" x="2" y="6" rx="2" />
-    </symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24">
-      <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
-      <rect x="2" y="4" width="20" height="16" rx="2" />
-    </symbol>
-    <symbol id="i-book-open" viewBox="0 0 24 24">
-      <path d="M12 5v16" />
-      <path
-        d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z" />
-    </symbol>
-    <symbol id="i-wrench" viewBox="0 0 24 24">
-      <path
-        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z" />
-    </symbol>
-    <symbol id="i-badge-check" viewBox="0 0 24 24">
-      <path
-        d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
-      <path d="m16 9-5.5 5.5L8 12" />
-    </symbol>
-    <symbol id="i-globe" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="10" />
-      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-      <path d="M2 12h20" />
-    </symbol>
-    <symbol id="i-accessibility" viewBox="0 0 24 24">
-      <circle cx="16" cy="4" r="1" />
-      <path d="m18 19 1-7-6 1" />
-      <path d="m5 8 3-3 5.5 3-2.36 3.5" />
-      <path d="M4.24 14.5a5 5 0 0 0 6.88 6" />
-      <path d="M13.76 17.5a5 5 0 0 0-6.88-6" />
-    </symbol>
-    <symbol id="i-users" viewBox="0 0 24 24">
-      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-      <path d="M16 3.128a4 4 0 0 1 0 7.744" />
-      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-      <circle cx="9" cy="7" r="4" />
-    </symbol>
-    <symbol id="i-network" viewBox="0 0 24 24">
-      <rect x="16" y="16" width="6" height="6" rx="1" />
-      <rect x="2" y="16" width="6" height="6" rx="1" />
-      <rect x="9" y="2" width="6" height="6" rx="1" />
-      <path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3" />
-      <path d="M12 12V8" />
-    </symbol>
-    <symbol id="i-calendar" viewBox="0 0 24 24">
-      <path d="M8 2v3" />
-      <path d="M16 2v3" />
-      <rect x="3" y="3" width="18" height="18" rx="2" />
-      <path d="M3 9h18" />
-    </symbol>
-    <symbol id="i-git-branch" viewBox="0 0 24 24">
-      <path d="M15 6a9 9 0 0 0-9 9V3" />
-      <circle cx="18" cy="6" r="3" />
-      <circle cx="6" cy="18" r="3" />
-    </symbol>
-    <symbol id="i-link" viewBox="0 0 24 24">
-      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-    </symbol>
-    <symbol id="i-menu" viewBox="0 0 24 24">
-      <path d="M4 5h16" />
-      <path d="M4 12h16" />
-      <path d="M4 19h16" />
-    </symbol>
-    <symbol id="i-x" viewBox="0 0 24 24">
-      <path d="M18 6 6 18" />
-      <path d="m6 6 12 12" />
-    </symbol>
-    <symbol id="i-heart-handshake" viewBox="0 0 24 24">
-      <path
-        d="M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762" />
-    </symbol>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="i-code-xml" viewBox="0 0 24 24"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></symbol>
+    <symbol id="i-handshake" viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+    <symbol id="i-git-branch" viewBox="0 0 24 24"><path d="M15 6a9 9 0 0 0-9 9V3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-layout-grid" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></symbol>
+    <symbol id="i-graduation-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
   </svg>
   <a class="skip" href="#contenido">Saltar al contenido</a>
 
   <header class="nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="#inicio"><svg class="mark" viewBox="3 0 64 64" aria-hidden="true" focusable="false">
-          <path d="M29 11H15a4 4 0 0 0-4 4v34a4 4 0 0 0 4 4h14" fill="none" stroke="var(--mark-violet)"
-            stroke-width="6.5" />
-          <path d="M17 33l5 5 8-11" fill="none" stroke="var(--mark-mint)" stroke-width="3.6" stroke-linecap="round"
-            stroke-linejoin="round" />
-          <path d="M59 11 39 32l20 21" fill="none" stroke="var(--mark-mint)" stroke-width="6.5" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg><span class="brand-name">Ese Kai Oxalde</span></a>
+      <a class="brand" href="#inicio"><svg class="mark" viewBox="3 0 64 64" aria-hidden="true"><path d="M29 11H15a4 4 0 0 0-4 4v34a4 4 0 0 0 4 4h14" fill="none" stroke="var(--mark-violet)" stroke-width="6.5"/><path d="M17 33l5 5 8-11" fill="none" stroke="var(--mark-mint)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M59 11 39 32l20 21" fill="none" stroke="var(--mark-mint)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="brand-name">Ese Kai Oxalde</span></a>
       <nav class="nav-links" id="menu" aria-label="Secciones">
-        <a href="#sobre-mi"><svg class="ico ico-g" data-g="menu" aria-hidden="true" focusable="false">
-            <use href="#i-user" />
-          </svg>Sobre mí</a>
-        <a href="#proyectos"><svg class="ico ico-g" data-g="menu" aria-hidden="true" focusable="false">
-            <use href="#i-code-xml" />
-          </svg>Proyectos</a>
-        <a href="#voluntariado"><svg class="ico ico-g" data-g="menu" aria-hidden="true" focusable="false">
-            <use href="#i-handshake" />
-          </svg>Voluntariado</a>
-        <a href="#trayectoria"><svg class="ico ico-g" data-g="menu" aria-hidden="true" focusable="false">
-            <use href="#i-briefcase" />
-          </svg>Trayectoria</a>
+        <a href="#sobre-mi"><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg>Sobre mí</a>
+        <a href="#proyectos"><svg class="ico" aria-hidden="true"><use href="#i-code-xml"/></svg>Proyectos</a>
+        <a href="#voluntariado"><svg class="ico" aria-hidden="true"><use href="#i-handshake"/></svg>Voluntariado</a>
+        <a href="#trayectoria"><svg class="ico" aria-hidden="true"><use href="#i-briefcase"/></svg>Trayectoria</a>
       </nav>
-      <a class="nav-cta" href="#contacto"><svg class="ico ico-g" data-g="menu" aria-hidden="true" focusable="false">
-          <use href="#i-mail" />
-        </svg>Contacto</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
-        <svg class="ico i-open" aria-hidden="true" focusable="false">
-          <use href="#i-menu" />
-        </svg>
-        <svg class="ico i-close" aria-hidden="true" focusable="false">
-          <use href="#i-x" />
-        </svg>
-      </button>
+      <a class="nav-cta" href="#contacto"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>Contacto</a>
+      <button class="icon-btn theme-toggle" type="button" aria-label="Cambiar a modo oscuro"><svg class="ico i-moon" aria-hidden="true"><use href="#i-moon"/></svg><svg class="ico i-sun" aria-hidden="true"><use href="#i-sun"/></svg></button>
+      <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><svg class="ico i-open" aria-hidden="true"><use href="#i-menu"/></svg><svg class="ico i-close" aria-hidden="true"><use href="#i-x"/></svg></button>
     </div>
   </header>
 
   <main id="contenido">
-
     <section class="hero" id="inicio">
       <div class="wrap hero-grid">
         <div>
           <h1>Software que funciona. Código que se entiende.</h1>
-          <p class="hero-role"><strong>Ese Kai Oxalde.</strong> Desarrollo software con una mirada puesta en la calidad.
-            Mi formación en Informática y experiencia en testing me llevan a buscar soluciones claras, verificables y
-            mantenibles.</p>
+          <p class="hero-role"><strong>Ese Kai Oxalde.</strong> Desarrollo software con una mirada puesta en la calidad. Mi formación en Informática y experiencia en testing me llevan a buscar soluciones claras, verificables y mantenibles.</p>
           <div class="actions">
-            <a class="btn btn-primary" href="#proyectos"><svg class="ico ico-g" data-g="portada" aria-hidden="true"
-                focusable="false">
-                <use href="#i-code-xml" />
-              </svg>Ver proyectos</a>
-            <a class="btn btn-ghost" href="#contacto"><svg class="ico ico-g" data-g="portada" aria-hidden="true"
-                focusable="false">
-                <use href="#i-mail" />
-              </svg>Escribirme</a>
+            <a class="btn btn-primary" href="#proyectos"><svg class="ico" aria-hidden="true"><use href="#i-code-xml"/></svg>Ver proyectos</a>
+            <a class="btn btn-ghost" href="#contacto"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>Escribirme</a>
           </div>
           <ul class="quick" aria-label="Enlaces de contacto">
-            <li><a href="mailto:ese.oxalde@gmail.com"><svg class="ico ico-g" data-g="portada" aria-hidden="true"
-                  focusable="false">
-                  <use href="#i-mail" />
-                </svg>Correo</a></li>
-            <li><a href="https://www.linkedin.com/in/eseoxalde"><svg class="ico ico-g" data-g="portada"
-                  aria-hidden="true" focusable="false">
-                  <use href="#i-link" />
-                </svg>LinkedIn</a></li>
-            <li><a href="https://github.com/eseoxalde"><svg class="ico ico-g" data-g="portada" aria-hidden="true"
-                  focusable="false">
-                  <use href="#i-git-branch" />
-                </svg>GitHub</a></li>
+            <li><a href="mailto:ese.oxalde@gmail.com"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>Correo</a></li>
+            <li><a href="https://www.linkedin.com/in/eseoxalde"><svg class="ico" aria-hidden="true"><use href="#i-link"/></svg>LinkedIn</a></li>
+            <li><a href="https://github.com/eseoxalde"><svg class="ico" aria-hidden="true"><use href="#i-git-branch"/></svg>GitHub</a></li>
           </ul>
         </div>
-
         <div class="term" role="region" aria-label="Resumen de mi perfil en formato de resultados de tests">
           <pre><span class="ln cmd" style="--i:0">$ npm test perfil</span><span class="ln" style="--i:1"> </span><span class="ln" style="--i:2"><span class="pass"> PASS </span> enseñanza</span><span class="ln" style="--i:3">   <span class="ok">✓</span> explica un bucle a alguien de 12 años</span><span class="ln" style="--i:4">   <span class="ok">✓</span> arma un aula con pocos recursos</span><span class="ln" style="--i:5"><span class="pass"> PASS </span> calidad</span><span class="ln" style="--i:6">   <span class="ok">✓</span> reproduce un error y lo documenta</span><span class="ln" style="--i:7">   <span class="ok">✓</span> automatiza pruebas con Jest</span><span class="ln" style="--i:8"><span class="pass"> PASS </span> accesibilidad</span><span class="ln" style="--i:9">   <span class="ok">✓</span> audita un sitio con pautas WCAG</span><span class="ln" style="--i:10"><span class="run"> RUNS </span> licenciatura</span><span class="ln dim" style="--i:11">   … 27 de 37 materias aprobadas</span><span class="ln" style="--i:12"> </span><span class="ln" style="--i:13">Tests: <span class="ok">5 aprobados</span>, <span class="run">1 en curso</span></span><span class="ln" style="--i:14"><span class="cmd">$</span> <span class="caret"></span></span></pre>
         </div>
@@ -237,20 +84,14 @@
       <div class="wrap about-grid">
         <div>
           <h2 class="sec-title">Sobre mí</h2>
-          <p>Soy estudiante avanzado de Informática, programo en Python, JavaScript y Node.js. Trabajé en control de
-            calidad de un proyecto de inclusión financiera basado en blockchain, y desde 2009 enseño informática en
-            escuelas técnicas y en espacios comunitarios.</p>
-          <p>Esa experiencia mejora la forma en que desarrollo, de tres maneras. Probar software me enseñó a desconfiar
-            de mis propias suposiciones. Enseñar me obligó a escribir y explicar con claridad. El trabajo comunitario me
-            enseñó a resolver con lo que hay. Busco un equipo de desarrollo de software donde eso sume.</p>
+          <p>Soy estudiante avanzado de Informática, programo en Python, JavaScript y Node.js. Trabajé en control de calidad de un proyecto de inclusión financiera basado en blockchain, y desde 2009 enseño informática en escuelas técnicas y en espacios comunitarios.</p>
+          <p>Esa experiencia mejora la forma en que desarrollo, de tres maneras. Probar software me enseñó a desconfiar de mis propias suposiciones. Enseñar me obligó a escribir y explicar con claridad. El trabajo comunitario me enseñó a resolver con lo que hay. Busco un equipo de desarrollo de software donde eso sume.</p>
         </div>
         <ul class="facts">
-          <li><b>Estudios</b> Licenciatura en Informática (73 %) y Analista Programador Universitario (95 %), Facultad
-            de Informática, UNLP.</li>
+          <li><b>Estudios</b> Licenciatura en Informática (73 %) y Analista Programador Universitario (95 %), Facultad de Informática, UNLP.</li>
           <li><b>Desarrollo</b> Python (Diplomatura de 30 semanas), JavaScript, Node.js y bases de datos.</li>
           <li><b>Calidad</b> Pruebas funcionales y automáticas con Jest, Jira, seguridad y accesibilidad.</li>
-          <li><b>Docencia</b> Ayudante y docente suplente en escuela técnica universitaria, más un tramo de formación
-            pedagógica.</li>
+          <li><b>Docencia</b> Ayudante y docente suplente en escuela técnica universitaria, más un tramo de formación pedagógica.</li>
           <li><b>Idiomas</b> Inglés B2, francés A2, lengua de señas argentina básica.</li>
         </ul>
       </div>
@@ -259,228 +100,69 @@
     <section class="sec" id="proyectos">
       <div class="wrap">
         <h2 class="sec-title">Proyectos</h2>
-        <p class="sec-intro">Proyectos de la facultad, trabajos a pedido y proyectos personales. Filtrá por origen para
-          ver cada grupo.</p>
-
-        <div class="filters" role="group" aria-label="Filtrar proyectos">
-          <button type="button" data-filter="todos" aria-pressed="true"><svg class="ico ico-g" data-g="filtros"
-              aria-hidden="true" focusable="false">
-              <use href="#i-layout-grid" />
-            </svg>Todos</button>
-          <button type="button" data-filter="facultad" aria-pressed="false"><svg class="ico ico-g" data-g="filtros"
-              aria-hidden="true" focusable="false">
-              <use href="#i-graduation-cap" />
-            </svg>Facultad</button>
-          <button type="button" data-filter="apedido" aria-pressed="false"><svg class="ico ico-g" data-g="filtros"
-              aria-hidden="true" focusable="false">
-              <use href="#i-handshake" />
-            </svg>A pedido</button>
-          <button type="button" data-filter="personal" aria-pressed="false"><svg class="ico ico-g" data-g="filtros"
-              aria-hidden="true" focusable="false">
-              <use href="#i-rocket" />
-            </svg>Personales</button>
+        <p class="sec-intro">Aplicaciones y experiencias que muestran cómo abordo problemas concretos, desde el relevamiento hasta la implementación y la validación. Filtrá por origen para ver cada grupo.</p>
+        <div class="filters" role="group" aria-label="Filtrar proyectos por origen">
+          <button type="button" data-filtro="todos" aria-pressed="true"><svg class="ico" aria-hidden="true"><use href="#i-layout-grid"/></svg>Todos</button>
+          <button type="button" data-filtro="facultad" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#i-graduation-cap"/></svg>Facultad</button>
+          <button type="button" data-filtro="pedido" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#i-handshake"/></svg>A pedido</button>
+          <button type="button" data-filtro="personal" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#i-rocket"/></svg>Personales</button>
         </div>
-        <p class="filter-status" id="filter-status" aria-live="polite">7 proyectos</p>
-
-        <div id="lista-proyectos">
-
-          <article class="proj" data-cat="apedido">
-            <div class="proj-meta"><b class="origen"><svg class="ico ico-g" data-g="proyectos" aria-hidden="true"
-                  focusable="false">
-                  <use href="#i-handshake" />
-                </svg>A pedido</b><span>Desarrollo</span></div>
-            <div>
-              <h3>Sitio web de "Caminando sobre gliptodontes y tigres dientes de sable"</h3>
-              <p class="materia">Proyecto de extensión de la UNLP</p>
-              <p>Sitio del proyecto de extensión que organiza talleres multisensoriales sobre paleontología y
-                patrimonio. Analicé los requerimientos, lo programé y lo mantuve. Con foco en la accesibilidad.</p>
-              <p class="gain"><svg class="ico ico-g" data-g="detalles" aria-hidden="true" focusable="false">
-                  <use href="#i-badge-check" />
-                </svg><span><strong>Habilidad que muestra:</strong> llevar un producto real de punta a punta, desde la
-                  obtención de requer
-                  al mantenimiento.</span></p>
-              <p class="links"><a href="https://caminando.unlp.edu.ar/"><svg class="ico ico-g" data-g="detalles"
-                    aria-hidden="true" focusable="false">
-                    <use href="#i-link" />
-                  </svg>Ver el sitio</a></p>
-              <p class="links"><a href="https://github.com/eseoxalde/caminando_old"><svg class="ico ico-g"
-                    data-g="detalles" aria-hidden="true" focusable="false">
-                    <use href="#i-git-branch" />
-                  </svg>Ver el código</a></p>
-              <p class="stack"><svg class="ico ico-g" data-g="detalles" aria-hidden="true" focusable="false">
-                  <use href="#i-wrench" />
-                </svg><span>Symfony, php, doctrine, twig, accesibility</span></p>
-              <figure class="shot">
-                <img src="assets/captura-caminando.png"
-                  alt="Pagina principal de Caminando sobre gliptodontes y tigres dientes de sable" width="1200"
-                  height="675" loading="lazy">
-              </figure>
-            </div>
-          </article>
-
-          <article class="proj" data-cat="facultad">
-            <div class="proj-meta"><b class="origen"><svg class="ico ico-g" data-g="proyectos" aria-hidden="true"
-                  focusable="false">
-                  <use href="#i-graduation-cap" />
-                </svg>Facultad</b><span>Desarrollo y pruebas</span></div>
-            <div>
-              <h3>Contrato inteligente de votación en Rust (ink!)</h3>
-              <p class="materia">Materia: Desarrollo de Software para Blockchain, Facultad de Informática (UNLP)</p>
-              <p>Contrato de votación escrito en Rust con ink!, el lenguaje para contratos inteligentes de la plataforma
-                Substrate. Incluye control de acceso, validaciones y eventos, y está respaldado por pruebas unitarias.
-              </p>
-              <p class="gain"><svg class="ico ico-g" data-g="detalles" aria-hidden="true" focusable="false">
-                  <use href="#i-badge-check" />
-                </svg><span><strong>Habilidad que muestra:</strong> programar lógica que no admite errores (permisos y
-                  validaciones) y respaldarla con pruebas.</span></p>
-              <p class="stack"><svg class="ico ico-g" data-g="detalles" aria-hidden="true" focusable="false">
-                  <use href="#i-wrench" />
-                </svg><span>Rust, ink!, pruebas unitarias, blockchain, smart contracts</span></p>
-              <p class="links"><a href="https://github.com/eseoxalde/ink-voting-contract"><svg class="ico ico-g"
-                    data-g="detalles" aria-hidden="true" focusable="false">
-                    <use href="#i-git-branch" />
-                  </svg>Ver el código</a></p>
-            </div>
-          </article>
-
-          <article class="proj" data-cat="facultad">
-            <div class="proj-meta"><b class="origen"><svg class="ico ico-g" data-g="proyectos" aria-hidden="true"
-                  focusable="false">
-                  <use href="#i-graduation-cap" />
-                </svg>Facultad</b><span>Desarrollo y diseño de experiencia de usuario</span></div>
-            <div>
-              <h3>Memorias de Malvinas</h3>
-              <p class="materia">Materia: Diseño de Experiencia de Usuario, Facultad de Informática (UNLP)</p>
-              <p>Recurso educativo interactivo para visibilizar y preservar las historias de los excombatientes de
-                Malvinas. Tiene un mapa interactivo, una línea de tiempo de eventos históricos y secciones temáticas,
-                con recursos accesibles y preparado para varios idiomas.</p>
-              <p class="gain"><svg class="ico ico-g" data-g="detalles" aria-hidden="true" focusable="false">
-                  <use href="#i-badge-check" />
-                </svg><span><strong>Habilidad que muestra:</strong> diseñar pensando en las personas usuarias y
-                  construir un producto completo y publicado, con contenedor Docker y despliegue en Vercel.</span></p>
-              <p class="stack"><svg class="ico ico-g" data-g="detalles" aria-hidden="true" focusable="false">
-                  <use href="#i-wrench" />
-                </svg><span>Next.js, React, TypeScript, Leaflet, Docker, ux-design, accessibility</span></p>
-              <p class="links"><a href="https://memorias-de-malvinas.vercel.app/"><svg class="ico ico-g"
-                    data-g="detalles" aria-hidden="true" focusable="false">
-                    <use href="#i-link" />
-                  </svg>Ver el sitio</a><a href="https://github.com/eseoxalde/Memorias-de-Malvinas"><svg
-                    class="ico ico-g" data-g="detalles" aria-hidden="true" focusable="false">
-                    <use href="#i-git-branch" />
-                  </svg>Ver el código</a></p>
-              <figure class="shot">
-                <img src="assets/captura-malvinas.png" alt="Pagina principal de Memorias de Malvinas" width="1200"
-                  height="675" loading="lazy">
-              </figure>
-            </div>
-          </article>
-
-          <article class="proj" data-cat="apedido">
-            <div class="proj-meta"><b class="origen"><svg class="ico ico-g" data-g="proyectos" aria-hidden="true"
-                  focusable="false">
-                  <use href="#i-handshake" />
-                </svg>A pedido</b><span>Desarrollo</span></div>
-            <div>
-              <h3>Vademécum farmacológico para Enfermería</h3>
-              <p>A pedido de la cátedra de Farmacología en Enfermería, Tecnicatura Superior en Enfermería (Escuela de
-                Gobierno en Salud Floreal Ferrara)</p>
-              <p class="gain"><svg class="ico ico-g" data-g="detalles" aria-hidden="true" focusable="false">
-                  <use href="#i-badge-check" />
-                </svg><span><strong>Habilidad que muestra:</strong> construir una aplicación completa de punta a punta
-                  sin frameworks: una PWA que siga funcionando sin conexión y una API propia en Node.js con
-                  autenticación por roles que guarda los cambios directamente en GitHub.</span></p>
-              <p class="stack"><svg class="ico ico-g" data-g="detalles" aria-hidden="true" focusable="false">
-                  <use href="#i-wrench" />
-                </svg><span>html+css, node.js, github-api, offline-first, rest-api, </span></p>
-              <p class="links"><a href="https://vademecum-farmacologico.vercel.app/"><svg class="ico ico-g"
-                    data-g="detalles" aria-hidden="true" focusable="false">
-                    <use href="#i-link" />
-                  </svg>Ver el sitio</a><a
-                  href="https://github.com/eseoxalde/Vademecum-farmacologico-de-enfermeria"><svg class="ico ico-g"
-                    data-g="detalles" aria-hidden="true" focusable="false">
-                    <use href="#i-git-branch" />
-                  </svg>Ver el código</a></p>
-              <figure class="shot">
-                <img src="assets/Captura-vademecum-ppal.png"
-                  alt="Página principal del vademécum farmacológico para enfermería" width="1200" height="675"
-                  loading="lazy">
-              </figure>
-            </div>
-          </article>
-
-          <article class="proj" data-cat="personal">
-            <div class="proj-meta">
-              <b class="origen">
-                <svg class="ico ico-g" data-g="proyectos" aria-hidden="true" focusable="false">
-                  <use href="#i-rocket" />
-                </svg>Personal
-              </b>
-              <span>Desarrollo</span>
-            </div>
-            <div>
-              <span class="badge">En preparación</span>
-              <h3>Observatorio Nacional de Juicios por Jurados</h3>
-              <p>
-                La experiencia de trabajar con juicios por jurados durante una práctica
-                rentada despertó mi interés por el tema y me motivó a desarrollar un
-                espacio para reunir información pública sobre los juicios por jurados
-                de Argentina. El objetivo es facilitar la consulta y el análisis de
-                los casos realizados en las distintas provincias. El proyecto continúa
-                en preparación: la recopilación, verificación y organización de los
-                datos siguen en desarrollo, y alcanzar una cobertura de todos los
-                juicios del país es un desafío todavía abierto.
-              </p>
-              <p class="gain">
-                <svg class="ico ico-g" data-g="detalles" aria-hidden="true" focusable="false">
-                  <use href="#i-badge-check" />
-                </svg>
-                <span><strong>Habilidad que muestra:</strong> Investigación con fuentes
-                  públicas, recopilación y validación de datos, automatización de tareas
-                  y desarrollo de herramientas para consultar y analizar información.</span>
-              </p>
-              <p class="stack">
-                <svg class="ico ico-g" data-g="detalles" aria-hidden="true" focusable="false">
-                  <use href="#i-wrench" />
-                </svg>
-                <span>Python, Flask, HTML, CSS, Bootstrap, JavaScript, Chart.js y JSON.</span>
-              </p>
-              <p class="links"><a href="https://jxj-argentina.vercel.app/"><svg class="ico ico-g" data-g="detalles"
-                    aria-hidden="true" focusable="false">
-                    <use href="#i-link" />
-                  </svg>Ver el sitio</a><a href="https://github.com/eseoxalde/juicio-por-jurado"><svg class="ico ico-g"
-                    data-g="detalles" aria-hidden="true" focusable="false">
-                    <use href="#i-git-branch" />
-                  </svg>Ver el código</a></p>
-              <figure class="shot">
-                <img src="assets/captura-jxj.png" alt="Captura del Observatorio Nacional de Juicios por Jurados"
-                  width="1200" height="675" loading="lazy">
-              </figure>
-            </div>
-          </article>
-          <article class="proj borrador" data-cat="clases" hidden>
-            <div class="proj-meta"><b class="origen"><svg class="ico ico-g" data-g="proyectos" aria-hidden="true"
-                  focusable="false">
-                  <use href="#i-presentation" />
-                </svg>Para clases</b><span>Desarrollo</span></div>
-            <div>
-              <span class="badge">Para completar</span>
-              <h3>Software para clases [nombre]</h3>
-              <p>Algo que hayas diseñado o implementado para que lo usen tus estudiantes: qué resolvía y cómo lo usaron.
-              </p>
-              <p class="gain"><svg class="ico ico-g" data-g="detalles" aria-hidden="true" focusable="false">
-                  <use href="#i-badge-check" />
-                </svg><span><strong>Habilidad que muestra:</strong> [cómo pasás de una necesidad de la clase a una
-                  herramienta que funciona].</span></p>
-              <p class="stack"><svg class="ico ico-g" data-g="detalles" aria-hidden="true" focusable="false">
-                  <use href="#i-wrench" />
-                </svg><span>[Tecnologías usadas]</span></p>
-              <p class="links"><span class="pendiente">[enlace al repositorio]</span></p>
-              <figure class="shot">
-                <div class="shot-slot">Espacio para captura del proyecto</div>
-              </figure>
-            </div>
-          </article>
-
+        <p class="filter-status" id="filter-status" aria-live="polite">5 proyectos</p>
+        <div class="card-grid" id="lista-proyectos">
+        <article class="card" data-cat="pedido">
+          <div class="card-body">
+            <div class="card-top"><span class="card-label">A pedido · Desarrollo</span><span class="status">Publicado</span></div>
+            <h3>Sitio web «Caminando sobre gliptodontes y tigres dientes de sable»</h3>
+            <p>Sitio de un proyecto de extensión de la UNLP que organiza talleres multisensoriales sobre paleontología y patrimonio. Participé en el análisis de requerimientos, desarrollo y mantenimiento.</p>
+            <p class="proof"><strong>Qué demuestra:</strong> participación en el ciclo de vida de un producto web y atención a la accesibilidad.</p>
+            <img class="card-shot" src="assets/captura-caminando.png" alt="Captura del sitio Caminando sobre gliptodontes y tigres dientes de sable" width="1200" height="675" loading="lazy">
+            <ul class="tags" aria-label="Tecnologías"><li>Symfony</li><li>PHP</li><li>Doctrine</li><li>Twig</li><li>Accesibilidad web</li></ul>
+            <div class="card-links"><a href="https://caminando.unlp.edu.ar/"><svg class="ico" aria-hidden="true"><use href="#i-link"/></svg>Ver sitio</a><a href="https://github.com/eseoxalde/caminando_old"><svg class="ico" aria-hidden="true"><use href="#i-git-branch"/></svg>Ver código</a></div>
+          </div>
+        </article>
+        <article class="card" data-cat="facultad">
+          <div class="card-body">
+            <div class="card-top"><span class="card-label">Facultad · Desarrollo y pruebas</span><span class="status">Código público</span></div>
+            <h3>Contrato inteligente de votación en Rust (ink!)</h3>
+            <p>Contrato de votación escrito en Rust con ink!, con control de acceso, validaciones, eventos y pruebas unitarias.</p>
+            <p class="proof"><strong>Qué demuestra:</strong> implementación de reglas de negocio y validación de condiciones importantes.</p>
+            <ul class="tags" aria-label="Tecnologías"><li>Rust</li><li>ink!</li><li>Pruebas unitarias</li><li>Blockchain</li></ul>
+            <div class="card-links"><a href="https://github.com/eseoxalde/ink-voting-contract"><svg class="ico" aria-hidden="true"><use href="#i-git-branch"/></svg>Ver código</a></div>
+          </div>
+        </article>
+        <article class="card" data-cat="facultad">
+          <div class="card-body">
+            <div class="card-top"><span class="card-label">Facultad · Desarrollo y UX</span><span class="status">Publicado</span></div>
+            <h3>Memorias de Malvinas</h3>
+            <p>Recurso educativo interactivo sobre la historia de Malvinas y las experiencias de quienes participaron en el conflicto. Incluye mapa, línea de tiempo y secciones temáticas, con soporte multilingüe.</p>
+            <p class="proof"><strong>Qué demuestra:</strong> desarrollo de un producto publicado con atención a la usabilidad y la accesibilidad.</p>
+            <img class="card-shot" src="assets/captura-malvinas.png" alt="Página principal de Memorias de Malvinas" width="1200" height="675" loading="lazy">
+            <ul class="tags" aria-label="Tecnologías"><li>Next.js</li><li>React</li><li>TypeScript</li><li>Leaflet</li><li>Docker</li><li>Accesibilidad</li></ul>
+            <div class="card-links"><a href="https://memorias-de-malvinas.vercel.app/"><svg class="ico" aria-hidden="true"><use href="#i-link"/></svg>Ver sitio</a><a href="https://github.com/eseoxalde/Memorias-de-Malvinas"><svg class="ico" aria-hidden="true"><use href="#i-git-branch"/></svg>Ver código</a></div>
+          </div>
+        </article>
+        <article class="card" data-cat="pedido">
+          <div class="card-body">
+            <div class="card-top"><span class="card-label">A pedido · Desarrollo</span><span class="status">Publicado</span></div>
+            <h3>Vademécum farmacológico para Enfermería</h3>
+            <p>Aplicación web progresiva para consulta de información farmacológica, con búsqueda, fichas de medicamentos, modo sin conexión y panel de administración.</p>
+            <p class="proof"><strong>Qué demuestra:</strong> desarrollo de una aplicación completa, con API propia, roles de acceso y persistencia de cambios en GitHub.</p>
+            <img class="card-shot" src="assets/Captura-vademecum-ppal.png" alt="Página principal del Vademécum farmacológico para Enfermería" width="1200" height="675" loading="lazy">
+            <ul class="tags" aria-label="Tecnologías"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Node.js</li><li>PWA</li><li>REST API</li></ul>
+            <div class="card-links"><a href="https://vademecum-farmacologico.vercel.app/"><svg class="ico" aria-hidden="true"><use href="#i-link"/></svg>Ver sitio</a><a href="https://github.com/eseoxalde/Vademecum-farmacologico-de-enfermeria"><svg class="ico" aria-hidden="true"><use href="#i-git-branch"/></svg>Ver código</a></div>
+          </div>
+        </article>
+        <article class="card" data-cat="personal">
+          <div class="card-body">
+            <div class="card-top"><span class="card-label">Personal · Datos públicos</span><span class="status wip">En preparación</span></div>
+            <h3>Observatorio Nacional de Juicios por Jurados</h3>
+            <p>Proyecto para reunir, organizar y consultar información pública sobre juicios por jurados en Argentina. La recopilación, verificación y normalización de los datos continúan en desarrollo.</p>
+            <p class="proof"><strong>Qué demuestra:</strong> trabajo con fuentes públicas, validación de datos y automatización de tareas de recopilación.</p>
+            <img class="card-shot" src="assets/captura-jxj.png" alt="Captura del Observatorio Nacional de Juicios por Jurados" width="1200" height="675" loading="lazy">
+            <ul class="tags" aria-label="Tecnologías"><li>Python</li><li>Flask</li><li>JSON</li><li>Bootstrap</li><li>Chart.js</li></ul>
+            <div class="card-links"><a href="https://jxj-argentina.vercel.app/"><svg class="ico" aria-hidden="true"><use href="#i-link"/></svg>Ver versión publicada</a><a href="https://github.com/eseoxalde/juicio-por-jurado"><svg class="ico" aria-hidden="true"><use href="#i-git-branch"/></svg>Ver código</a></div>
+          </div>
+        </article>
         </div>
       </div>
     </section>
@@ -488,220 +170,106 @@
     <section class="sec" id="voluntariado">
       <div class="wrap">
         <h2 class="sec-title">Del trabajo comunitario al código</h2>
-        <p class="sec-intro">Más de diez años de voluntariado y extensión universitaria en la UNLP, desde 2009, me
-          dieron habilidades que uso todos los días al programar. Acá cuento qué hice en cada programa y qué me llevé
-          para desarrollar software.</p>
-
-        <div class="progs">
-          <article class="prog">
-            <div class="prog-meta"><b class="origen"><svg class="ico ico-g" data-g="voluntariado" aria-hidden="true"
-                  focusable="false">
-                  <use href="#i-accessibility" />
-                </svg>UNLP</b><span>2022 a 2023</span></div>
-            <div>
-              <h3>Auditoría de accesibilidad de "Caminando sobre gliptodontes y tigres dientes de sable"</h3>
-              <p>Como responsable de accesibilidad del sitio, evalué su cumplimiento de las pautas WCAG, con foco en
-                problemas visuales, y propuse mejoras concretas.</p>
-              <p class="gain"><svg class="ico ico-g" data-g="voluntariado" aria-hidden="true" focusable="false">
-                  <use href="#i-badge-check" />
-                </svg><span><strong>Lo que me llevé para desarrollar:</strong> convertir un criterio de accesibilidad en
-                  una prueba concreta y priorizar lo que más afecta a quien usa el sitio.</span></p>
-            </div>
+        <p class="sec-intro">Más de diez años de voluntariado y extensión universitaria me dieron herramientas que uso al programar: explicar sin dar nada por sabido, resolver con recursos limitados y pensar en los contextos reales de uso.</p>
+        <div class="timeline">
+          <article class="tl-card">
+            <div class="tl-date">2022 a 2023</div>
+            <div><h3>Auditoría de accesibilidad de «Caminando sobre gliptodontes y tigres dientes de sable»</h3><p class="org">Proyecto de extensión de la UNLP</p><p>Como responsable de accesibilidad del sitio, evalué su cumplimiento de las pautas WCAG, con foco en problemas visuales, y propuse mejoras concretas.</p><p><strong>Lo que me llevé:</strong> convertir un criterio de accesibilidad en una prueba concreta y priorizar según el impacto.</p></div>
           </article>
-
-          <article class="prog">
-            <div class="prog-meta"><b class="origen"><svg class="ico ico-g" data-g="voluntariado" aria-hidden="true"
-                  focusable="false">
-                  <use href="#i-presentation" />
-                </svg>El barrio va a la Universidad</b><span>2016 a 2021</span></div>
-            <div>
-              <h3>Clases de informática y soporte técnico en espacios comunitarios</h3>
-              <p>Preparé y dicté clases de informática a niños, adolescentes y adultos. También preparé y mantuve las
-                computadoras, instalé y configuré el software para las clases, y armé y mantuve redes en espacios
-                educativos comunitarios, con pocos recursos y resolviendo los problemas de forma autónoma.</p>
-              <p>Trabajé en comedores, clubes de barrio y espacios comunitarios, dando clases a niños, adolescentes y
-                adultos, con diferentes niveles de conocimientos.</p>
-              <p class="gain"><svg class="ico ico-g" data-g="voluntariado" aria-hidden="true" focusable="false">
-                  <use href="#i-badge-check" />
-                </svg><span><strong>Lo que me llevé para desarrollar:</strong> diagnosticar y resolver problemas
-                  técnicos sin condiciones ideales, y entender el entorno real donde funciona lo que uno desarrolla:
-                  equipos modestos y poca infraestructura. Adaptar los conocimientos a diferentes contextos y
-                  personas.</span></p>
-            </div>
+          <article class="tl-card">
+            <div class="tl-date">2016 a 2021</div>
+            <div><h3>Clases de informática y soporte técnico en espacios comunitarios</h3><p class="org">Programa «El barrio va a la Universidad»</p><p>Preparé y dicté clases a niños, adolescentes y adultos en comedores, clubes de barrio y espacios comunitarios. También mantuve computadoras, instalé software y armé redes con pocos recursos, resolviendo los problemas de forma autónoma.</p><p><strong>Lo que me llevé:</strong> diagnosticar sin condiciones ideales y adaptar lo que sé a cada contexto y persona.</p></div>
           </article>
-
-          <article class="prog">
-            <div class="prog-meta"><b class="origen"><svg class="ico ico-g" data-g="voluntariado" aria-hidden="true"
-                  focusable="false">
-                  <use href="#i-users" />
-                </svg>Informática inclusiva</b><span>2010 a 2016</span></div>
-            <div>
-              <h3>Talleres de computación para niños y sus familias</h3>
-              <p>Preparé y dicté talleres de computación para niños y sus grupos familiares, en un proyecto de
-                voluntariado universitario que buscaba introducir las tecnologías de la información en sectores
-                desfavorecidos.</p>
-              <p class="gain"><svg class="ico ico-g" data-g="voluntariado" aria-hidden="true" focusable="false">
-                  <use href="#i-badge-check" />
-                </svg><span><strong>Lo que me llevé para desarrollar:</strong> enseñar a públicos muy distintos y
-                  generar confianza con quien tiene poca experiencia técnica, algo clave para trabajar con personas
-                  usuarias reales.</span></p>
-            </div>
+          <article class="tl-card">
+            <div class="tl-date">2010 a 2016</div>
+            <div><h3>Talleres de computación para niños y sus familias</h3><p class="org">Proyecto de voluntariado «Informática inclusiva»</p><p>Preparé y dicté talleres para introducir las tecnologías de la información en sectores desfavorecidos.</p><p><strong>Lo que me llevé:</strong> enseñar a públicos muy distintos y generar confianza con quien tiene poca experiencia técnica.</p></div>
           </article>
-
-          <article class="prog">
-            <div class="prog-meta"><b class="origen"><svg class="ico ico-g" data-g="voluntariado" aria-hidden="true"
-                  focusable="false">
-                  <use href="#i-heart-handshake" />
-                </svg>UPAMI</b><span>2009 a 2012</span></div>
-            <div>
-              <h3>Alfabetización informática para personas mayores</h3>
-              <p>Fui ayudante en el dictado de clases de alfabetización informática para personas mayores afiliadas a
-                PAMI, dentro del programa UPAMI.</p>
-              <p class="gain"><svg class="ico ico-g" data-g="voluntariado" aria-hidden="true" focusable="false">
-                  <use href="#i-badge-check" />
-                </svg><span><strong>Lo que me llevé para desarrollar:</strong> explicar sin dar nada por sabido y
-                  ajustar el ritmo a cada persona. Es la base de diseñar y probar pensando en quien usa el
-                  software.</span></p>
-            </div>
+          <article class="tl-card">
+            <div class="tl-date">2009 a 2012</div>
+            <div><h3>Alfabetización informática para personas mayores</h3><p class="org">Programa UPAMI</p><p>Fui ayudante en clases de alfabetización informática para personas mayores afiliadas a PAMI.</p><p><strong>Lo que me llevé:</strong> explicar sin dar nada por sabido y ajustar el ritmo a cada persona.</p></div>
           </article>
         </div>
-        <p class="prog-nota">El desarrollo de ese mismo sitio, "Caminando sobre gliptodontes y tigres dientes de
-          sable", está en <a href="#proyectos">Proyectos</a>.</p>
       </div>
     </section>
 
     <section class="sec" id="trayectoria">
-      <div class="wrap path-grid">
-        <div>
-          <h2 class="sec-title">Trayectoria</h2>
-          <h3>Experiencia</h3>
-          <ol class="steps">
-            <li>
-              <h4><svg class="ico ico-g" data-g="trayectoria" aria-hidden="true" focusable="false">
-                  <use href="#i-globe" />
-                </svg><span>Practicante</span></h4>
-              <p class="when">Consejo de la Magistratura de la Ciudad Autónoma de Buenos Aires, 02/2026 a la actualidad
-              </p>
-              <ul>
-                <li>Gestión, mantenimiento y actualización del contenido del sitio web institucional</li>
-                <li>Pruebas funcionales, con identificación y documentación de errores.</li>
-                <li>Evaluación de accesibilidad web y propuestas de mejora.
-                  <p class="links"><svg class="ico ico-g" data-g="trayectoria" aria-hidden="true" focusable="false">
-                      <use href="#i-link" />
-                    </svg><a href="https://mesafederaljxj.ar/">Sitio de Mesa Federal</a></p>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <h4><svg class="ico ico-g" data-g="trayectoria" aria-hidden="true" focusable="false">
-                  <use href="#i-presentation" />
-                </svg><span>Ayudante de Interfaces Gráficas y Desarrollo de Aplicaciones Web</span></h4>
-              <p class="when">Escuela Secundaria de Educación Técnica de la UNQ, 02/2021 a 04/2023</p>
-              <ul>
-                <li>Asistencia a estudiantes en aplicaciones web con HTML, CSS y JavaScript.</li>
-                <li>Promoción de buenas prácticas de desarrollo accesible y seguro.</li>
-              </ul>
-            </li>
-            <li>
-              <h4><svg class="ico ico-g" data-g="trayectoria" aria-hidden="true" focusable="false">
-                  <use href="#i-bug" />
-                </svg><span>Soporte QA en el proyecto DIDI</span></h4>
-              <p class="when">ONG Bitcoin Argentina y BID, 02/2021 a 12/2022</p>
-              <ul>
-                <li>Seguimiento de errores en Jira y pruebas funcionales documentadas.</li>
-                <li>Pruebas automáticas con Jest para aplicaciones basadas en blockchain.</li>
-              </ul>
-              <p class="links"><svg class="ico ico-g" data-g="trayectoria" aria-hidden="true" focusable="false">
-                  <use href="#i-link" />
-                </svg><a href="https://www.didi.org.ar/">Sitio del proyecto DIDI</a></p>
-            </li>
-            <li>
-              <h4><svg class="ico ico-g" data-g="trayectoria" aria-hidden="true" focusable="false">
-                  <use href="#i-presentation" />
-                </svg><span>Docente suplente de Interfaces Gráficas y Desarrollo de Aplicaciones Web</span></h4>
-              <p class="when">Escuela Secundaria de Educación Técnica de la UNQ, 07/2021 a 12/2021</p>
-              <ul>
-                <li>Clases prácticas de programación web y gestión de aulas virtuales.</li>
-              </ul>
-            </li>
-            <li>
-              <h4><svg class="ico ico-g" data-g="trayectoria" aria-hidden="true" focusable="false">
-                  <use href="#i-bug" />
-                </svg><span>Ayudante de Laboratorio de Testing y Seguridad en la Información</span></h4>
-              <p class="when">Escuela Secundaria de Educación Técnica de la UNQ, 02/2020 a 07/2023</p>
-              <ul>
-                <li>Enseñanza de testing manual y automatizado, control de versiones y seguridad.</li>
-              </ul>
-            </li>
-          </ol>
+      <div class="wrap">
+        <h2 class="sec-title">Trayectoria</h2>
+        <h3 class="sub">Experiencia</h3>
+        <div class="timeline">
+          <article class="tl-card">
+            <div class="tl-date">02/2026 a la actualidad</div>
+            <div><h3>Práctica en gestión web, testing y accesibilidad</h3><p class="org">Consejo de la Magistratura de la Ciudad Autónoma de Buenos Aires</p><ul><li>Gestión, mantenimiento y actualización del contenido del sitio institucional.</li><li>Pruebas funcionales, con identificación y documentación de errores.</li><li>Evaluación de accesibilidad web y propuestas de mejora.</li></ul><p><a href="https://mesafederaljxj.ar/">Sitio de Mesa Federal</a></p></div>
+          </article>
+          <article class="tl-card">
+            <div class="tl-date">02/2021 a 04/2023</div>
+            <div><h3>Ayudante de Interfaces Gráficas y Desarrollo de Aplicaciones Web</h3><p class="org">Escuela Secundaria de Educación Técnica de la UNQ</p><ul><li>Asistencia a estudiantes en aplicaciones web con HTML, CSS y JavaScript.</li><li>Promoción de buenas prácticas de desarrollo accesible y seguro.</li></ul></div>
+          </article>
+          <article class="tl-card">
+            <div class="tl-date">02/2021 a 12/2022</div>
+            <div><h3>Soporte QA en el proyecto DIDI</h3><p class="org">ONG Bitcoin Argentina y BID</p><ul><li>Seguimiento de errores en Jira y pruebas funcionales documentadas.</li><li>Pruebas automáticas con Jest para aplicaciones basadas en blockchain.</li></ul><p><a href="https://www.didi.org.ar/">Sitio del proyecto DIDI</a></p></div>
+          </article>
+          <article class="tl-card">
+            <div class="tl-date">07/2021 a 12/2021</div>
+            <div><h3>Docente suplente de Interfaces Gráficas y Desarrollo de Aplicaciones Web</h3><p class="org">Escuela Secundaria de Educación Técnica de la UNQ</p><p>Clases prácticas de programación web y gestión de aulas virtuales.</p></div>
+          </article>
+          <article class="tl-card">
+            <div class="tl-date">02/2020 a 07/2023</div>
+            <div><h3>Ayudante de Laboratorio de Testing y Seguridad en la Información</h3><p class="org">Escuela Secundaria de Educación Técnica de la UNQ</p><p>Enseñanza de testing manual y automatizado, control de versiones y seguridad.</p></div>
+          </article>
         </div>
-        <div>
-          <h3 class="offset">Formación</h3>
-          <ol class="steps">
-            <li>
-              <h4><svg class="ico ico-g" data-g="trayectoria" aria-hidden="true" focusable="false">
-                  <use href="#i-graduation-cap" />
-                </svg><span>Licenciatura en Informática y Analista Programador Universitario</span></h4>
-              <p class="when">Facultad de Informática, UNLP, 2002 a la actualidad</p>
-              <div class="progress">
-                <p class="p-label">Licenciatura en Informática <span>27 de 37 materias</span></p>
-                <div class="bar" role="img" aria-label="Licenciatura: 73 por ciento aprobado"><i style="width: 73%"></i>
-                </div>
-              </div>
-              <div class="progress">
-                <p class="p-label">Analista Programador Universitario <span>23 de 24 materias</span></p>
-                <div class="bar" role="img" aria-label="Analista Programador Universitario: 95 por ciento aprobado"><i
-                    style="width: 95%"></i></div>
-              </div>
-            </li>
-            <li>
-              <h4><svg class="ico ico-g" data-g="trayectoria" aria-hidden="true" focusable="false">
-                  <use href="#i-book-open" />
-                </svg><span>Tramo de Formación Pedagógica para nivel medio</span></h4>
-              <p class="when">Universidad de Ciencias Empresariales y Sociales, 2021 a 2025</p>
-            </li>
-          </ol>
+        <h3 class="sub">Formación</h3>
+        <div class="edu-grid">
+          <article class="edu-card">
+            <h3>Licenciatura en Informática</h3>
+            <p>Facultad de Informática, UNLP, 2002 a la actualidad</p>
+            <p class="p-label">Avance <span>27 de 37 materias</span></p>
+            <div class="bar" role="img" aria-label="Avance: 73 por ciento aprobado"><i style="width: 73%"></i></div>
+          </article>
+          <article class="edu-card">
+            <h3>Analista Programador Universitario</h3>
+            <p>Facultad de Informática, UNLP</p>
+            <p class="p-label">Avance <span>23 de 24 materias</span></p>
+            <div class="bar" role="img" aria-label="Avance: 96 por ciento aprobado"><i style="width: 96%"></i></div>
+          </article>
+          <article class="edu-card">
+            <h3>Tramo de Formación Pedagógica para nivel medio</h3>
+            <p>Universidad de Ciencias Empresariales y Sociales, 2021 a 2025</p>
+          </article>
+          <article class="edu-card">
+            <h3>Formación complementaria</h3>
+            <p>Diplomatura en Python (30 semanas). Idiomas: inglés B2, francés A2.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="sec" id="contacto">
       <div class="wrap">
-        <h2 class="sec-title">Contacto</h2>
-        <p>Si tenés una vacante de desarrollo de software, escribime y te respondo pronto.</p>
-        <ul class="contact-list">
-          <li><span><svg class="ico ico-g" data-g="contacto" aria-hidden="true" focusable="false">
-                <use href="#i-mail" />
-              </svg>Correo</span><a href="mailto:ese.oxalde@gmail.com">ese.oxalde@gmail.com</a></li>
-          <li><span><svg class="ico ico-g" data-g="contacto" aria-hidden="true" focusable="false">
-                <use href="#i-link" />
-              </svg>LinkedIn</span><a href="https://www.linkedin.com/in/eseoxalde">linkedin.com/in/eseoxalde</a></li>
-          <li><span><svg class="ico ico-g" data-g="contacto" aria-hidden="true" focusable="false">
-                <use href="#i-git-branch" />
-              </svg>GitHub</span><a href="https://github.com/eseoxalde">github.com/eseoxalde</a></li>
-        </ul>
+        <div class="contact-panel">
+          <div>
+            <h2>¿Hablamos de software?</h2>
+            <p>Si tenés una vacante de desarrollo de software, escribime y te respondo pronto.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:ese.oxalde@gmail.com"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>ese.oxalde@gmail.com</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/eseoxalde"><svg class="ico" aria-hidden="true"><use href="#i-link"/></svg>LinkedIn</a>
+            <a class="btn btn-ghost" href="https://github.com/eseoxalde"><svg class="ico" aria-hidden="true"><use href="#i-git-branch"/></svg>GitHub</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="foot">
     <div class="wrap foot-inner">
-      <p class="foot-brand"><svg class="mark" viewBox="3 0 64 64" aria-hidden="true" focusable="false">
-          <path d="M29 11H15a4 4 0 0 0-4 4v34a4 4 0 0 0 4 4h14" fill="none" stroke="var(--mark-violet)"
-            stroke-width="6.5" />
-          <path d="M17 33l5 5 8-11" fill="none" stroke="var(--mark-mint)" stroke-width="3.6" stroke-linecap="round"
-            stroke-linejoin="round" />
-          <path d="M59 11 39 32l20 21" fill="none" stroke="var(--mark-mint)" stroke-width="6.5" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg><span>Ese Kai Oxalde. Portfolio profesional.</span></p>
-      <p class="foot-date"><svg class="ico ico-g" data-g="contacto" aria-hidden="true" focusable="false">
-          <use href="#i-calendar" />
-        </svg><span>Última actualización: <time datetime="2026-09">septiembre de 2026</time></span></p>
+      <p class="foot-brand"><svg class="mark" viewBox="3 0 64 64" aria-hidden="true"><path d="M29 11H15a4 4 0 0 0-4 4v34a4 4 0 0 0 4 4h14" fill="none" stroke="var(--mark-violet)" stroke-width="6.5"/><path d="M17 33l5 5 8-11" fill="none" stroke="var(--mark-mint)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M59 11 39 32l20 21" fill="none" stroke="var(--mark-mint)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Ese Kai Oxalde. Portfolio profesional.</span></p>
+      <p>Última actualización: <time datetime="2026-10">octubre de 2026</time></p>
     </div>
   </footer>
 
+  <script src="js/tema.js" defer></script>
   <script src="js/filtros.js" defer></script>
   <script src="js/menu.js" defer></script>
 </body>
-
 </html>
